@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Mapa App v1.0
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addFuelStationsToMap()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="map"></div>
+  <ion-fab bottom right top><button color="light" ion-fab (click)="centerCamera()"><ion-icon ios="ios-locate-outline" md="md-locate"></ion-icon></button></ion-fab>
+</ion-content>

@@ -1,0 +1,25 @@
+page-login {
+  ion-content{
+    img{
+      margin-top: 16px;
+    }
+    form{
+      .rememberme{
+        ion-checkbox{
+          margin-left: 0!important;
+          margin-right: 0.5em !important;
+        }
+        .item-inner{
+          border-bottom: 0px !important;
+        }
+      }
+      .submitBoton{
+        margin-top: 1em !important;
+        background-color: #CC4125 !important;
+      }
+      p{
+        margin: 0!important;
+      }
+    }
+  }
+}

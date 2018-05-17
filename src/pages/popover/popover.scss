@@ -1,0 +1,43 @@
+page-popover {
+
+  .popover-page{
+    margin: 0!important;
+  }
+  ion-row,
+  ion-col {
+    padding: 0;
+  }
+
+  .row-dots {
+    text-align: center;
+
+    .dot {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      margin: 10px auto;
+      position: relative;
+    }
+  }
+
+  .dot-white {
+    background-color: rgb(255,255,255);
+  }
+
+  .dot-tan {
+    background-color: rgb(249,241,228);
+  }
+
+  .dot-grey {
+    background-color: rgb(76,75,80);
+  }
+
+  .dot-black {
+    background-color: rgb(0,0,0);
+  }
+
+  .dot.selected {
+    border-width: 2px;
+    border-color: #327eff;
+  }
+}

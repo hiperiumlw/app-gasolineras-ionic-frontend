@@ -1,10 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { MapPage } from "../pages/map/map";
+import { FavouritesPage } from "../pages/favourites/favourites";
+import { LoginPage } from "../pages/login/login";
+import { PreferencesPage } from "../pages/preferences/preferences";
+import { PreferencesServiceProvider } from '../providers/preferences-service/preferences-service';
+import { AdminpanelPage } from "../pages/adminpanel/adminpanel";
+import { UserModel } from '../models/user-model';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,33 +17,55 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = MapPage;
+  pages: Array<{title: string, component: any, icon:string}>;
 
-  pages: Array<{title: string, component: any}>;
+  login:any;
+  logout: any;
+  adminpanel:any;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  user:UserModel;
+
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen
+    ,private preferenceService:PreferencesServiceProvider,private events:Events,private toastCtrl:ToastController) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
+    this.initializeEvents();
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Mapa', component:MapPage , icon: 'map'},
+      { title: 'Favoritos', component:FavouritesPage, icon: 'star'},
+      { title: 'Preferencias', component:PreferencesPage, icon: 'settings'},
     ];
 
+    this.login = {title: 'Iniciar Sesión', component:LoginPage,icon:'person'};
+    this.logout = {title: 'Cerrar Sesión', icon:'log-out'};
+    this.adminpanel = {title: 'Admin Panel',component:AdminpanelPage,icon:'open'}
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+      this.preferenceService.defaultPreferences();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
+  initializeEvents(){
+    this.events.subscribe('app:toast',(message)=>{
+      this.showToast(message);
+    })
+  }
+
+  showToast(message){
+    let toast = this.toastCtrl.create({
+      message:message,
+      duration:3000,
+      position:'top'
+    })
+
+    toast.present();
+  }
+
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
 }

@@ -10,7 +10,7 @@
       <button class="lista-menu" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
       </button>
-      <button class="lista-menu" menuClose ion-item (click)="openPage(login)">
+      <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">
         <ion-icon [name]="login.icon"></ion-icon> {{login.title}}
       </button>
     </ion-list>

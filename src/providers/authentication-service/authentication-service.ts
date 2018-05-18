@@ -1,6 +1,7 @@
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  Events } from 'ionic-angular';
+import { Observable} from 'rxjs/observable';
 import 'rxjs/add/operator/map';
 import { URIS } from '../../models/uris-model';
 /*
@@ -16,7 +17,7 @@ export class AuthenticationServiceProvider {
 
   constructor(public http: HttpClient,private events:Events) {
     console.log('Hello AuthenticationServiceProvider Provider');
-    this.URIS = new URIS('http://192.168.1.45:3000');
+    this.URIS = new URIS('http://localhost:3000');
   }
 
   register(data:any){
@@ -24,10 +25,11 @@ export class AuthenticationServiceProvider {
     headers.append('Content-Type','application-json');
     return new Promise((resolve)=>{
       this.http.post(this.URIS.REGISTER,data)
-        .map((res:any)=>{ res = res.json()})
         .subscribe(
-          (data:any)=>{ resolve(data) },
-          (error)=>{ this.events.publish('app:toast',JSON.parse(error.body).message)}
+          (data:any)=>{resolve(data)},
+          (error)=>{
+            this.events.publish('app:toast',error.error.message
+          )}
         );
     })
   }

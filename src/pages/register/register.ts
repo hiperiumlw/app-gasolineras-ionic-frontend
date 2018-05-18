@@ -40,8 +40,7 @@ export class RegisterPage {
   register(){
       this.authService.register(this.registerForm.value)
         .then((data)=>{
-          console.log("Usuario registrado -> "+ data);
-          this.registerCorrectly();
+          this.registerCorrectly(data);
         })
         .catch(()=>{
           console.log("Ha habido algun error -> AuthService");
@@ -49,8 +48,8 @@ export class RegisterPage {
       
   }
 
-  registerCorrectly(){
-      this.events.publish('app:toast',{message:'Se ha registrado correctamente'});
+  registerCorrectly(data){
+      this.events.publish('app:toast',data.message);
       this.navCtrl.pop();
   }
 

@@ -10,7 +10,7 @@ import { PreferencesPage } from "../pages/preferences/preferences";
 import { PreferencesServiceProvider } from '../providers/preferences-service/preferences-service';
 import { AdminpanelPage } from "../pages/adminpanel/adminpanel";
 import { UserModel } from '../models/user-model';
-
+import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 @Component({
   templateUrl: 'app.html'
 })
@@ -27,7 +27,9 @@ export class MyApp {
   user:UserModel;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen
-    ,private preferenceService:PreferencesServiceProvider,private events:Events,private toastCtrl:ToastController) {
+    ,private preferenceService:PreferencesServiceProvider,
+    private events:Events,private toastCtrl:ToastController,
+    private authService:AuthenticationServiceProvider) {
     this.initializeApp();
     this.initializeEvents();
     this.pages = [
@@ -52,6 +54,10 @@ export class MyApp {
   initializeEvents(){
     this.events.subscribe('app:toast',(message)=>{
       this.showToast(message);
+    });
+
+    this.events.subscribe('app:login',(user)=>{
+      this.handleLogin(user);
     })
   }
 
@@ -65,6 +71,11 @@ export class MyApp {
     toast.present();
   }
 
+  handleLogin(user){
+    this.user = user;
+    this.authService.saveUserLocally(user);
+    this.nav.setRoot(MapPage);
+  }
   openPage(page) {
     this.nav.setRoot(page.component);
   }

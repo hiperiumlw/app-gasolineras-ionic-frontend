@@ -2,6 +2,7 @@
   <ion-header>
     <ion-toolbar color="danger">
       <ion-title>Gasolineras Baratas</ion-title>
+      <div *ngIf="user" class="welcomeUser">Bienvenido , {{user.name}}</div>
     </ion-toolbar>
   </ion-header>
 
@@ -12,6 +13,9 @@
       </button>
       <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">
         <ion-icon [name]="login.icon"></ion-icon> {{login.title}}
+      </button>
+      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logout()">
+        <ion-icon [name]="logout.icon"></ion-icon> {{logout.title}}
       </button>
     </ion-list>
   </ion-content>

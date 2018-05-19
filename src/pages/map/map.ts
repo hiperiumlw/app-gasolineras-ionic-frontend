@@ -55,9 +55,9 @@ export class MapPage  {
           console.log("Entro en subscribe")
           if (this.myTarget != null){
             this.myTarget.remove();
-            this.map.addMarker({icon:'assets/imgs/customMarker.png',position:miPosicion}).then((marker)=>{this.myTarget=marker});
+            this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:miPosicion}).then((marker)=>{this.myTarget=marker});
           } else {
-            this.map.addMarker({icon:'assets/imgs/customMarker.png',position:miPosicion}).then((marker)=>{this.myTarget=marker});
+            this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:miPosicion}).then((marker)=>{this.myTarget=marker});
           }
         })
       }).catch((err)=>{
@@ -100,7 +100,7 @@ export class MapPage  {
           let longitud = (marker['Longitud (WGS84)']).replace(',','.');
           let location = new LatLng(parseFloat(latitud),parseFloat(longitud));
           console.log(location);
-          this.map.addMarker({icon:'assets/imgs/customMarker.png',position:location});
+          this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:location});
         })
       });
     });

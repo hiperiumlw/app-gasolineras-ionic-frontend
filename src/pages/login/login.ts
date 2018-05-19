@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import {Validators,FormBuilder,FormGroup} from "@angular/forms";
 import {RegisterPage} from "../register/register";
+import { AuthenticationServiceProvider } from '../../providers/authentication-service/authentication-service';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,7 +19,8 @@ import {RegisterPage} from "../register/register";
 export class LoginPage {
 
   private loginForm : FormGroup;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder:FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder:FormBuilder,
+    private authService:AuthenticationServiceProvider,private events:Events) {
     this.loginForm = this.createForm();
   }
 
@@ -35,6 +37,17 @@ export class LoginPage {
 
   login(){
     console.log(this.loginForm.value);
+    this.authService.login(this.loginForm.value)
+      .then((data)=>{
+          this.loginCorrectly(data);
+      })
+      .catch(()=>{
+        console.log("Ha habido algun error -> AuthService");
+      })
+  }
+
+  loginCorrectly(data){
+    this.events.publish('app:login',data.user);
   }
 
   goToRegister(){

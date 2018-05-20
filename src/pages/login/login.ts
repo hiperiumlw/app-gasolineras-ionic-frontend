@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
-import {Validators,FormBuilder,FormGroup} from "@angular/forms";
-import {RegisterPage} from "../register/register";
+import { Validators, FormBuilder, FormGroup } from "@angular/forms";
+import { RegisterPage } from "../register/register";
 import { AuthenticationServiceProvider } from '../../providers/authentication-service/authentication-service';
 
 /**
@@ -18,9 +18,9 @@ import { AuthenticationServiceProvider } from '../../providers/authentication-se
 })
 export class LoginPage {
 
-  private loginForm : FormGroup;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder:FormBuilder,
-    private authService:AuthenticationServiceProvider,private events:Events) {
+  private loginForm: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder,
+    private authService: AuthenticationServiceProvider, private events: Events) {
     this.loginForm = this.createForm();
   }
 
@@ -28,29 +28,38 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  createForm():FormGroup{
+  createForm(): FormGroup {
     return this.formBuilder.group({
-      email:['',Validators.required],
-      password:['',Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
-  login(){
-    console.log(this.loginForm.value);
+  login() {
     this.authService.login(this.loginForm.value)
-      .then((data)=>{
-          this.loginCorrectly(data);
+      .then((data) => {
+        this.loginCorrectly(data);
       })
-      .catch(()=>{
+      .catch(() => {
         console.log("Ha habido algun error -> AuthService");
       })
   }
 
-  loginCorrectly(data){
-    this.events.publish('app:login',data.user);
+  facebookLogin() {
+    this.authService.facebookLogin().subscribe((connected) => {
+      if (connected) {
+        this.authService.getFacebookProfile().subscribe((profile) => {
+          this.events.publish('app:loginFacebook',profile);
+        }, (error) => { console.log(error) });
+      }
+    }, (error) => { console.log(error) });
   }
 
-  goToRegister(){
+  loginCorrectly(data) {
+    this.events.publish('app:login', data.user);
+  }
+
+  goToRegister() {
     this.navCtrl.push(RegisterPage);
   }
 

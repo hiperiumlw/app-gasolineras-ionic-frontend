@@ -25692,6 +25692,11 @@ ion-navbar.toolbar {
   margin-right: 0.5em;
 }
 
+.welcomeUser {
+  margin-left: 1em;
+  color: white;
+}
+
 page-login ion-content img {
   margin-top: 16px;
 }

@@ -14,7 +14,7 @@
       <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">
         <ion-icon [name]="login.icon"></ion-icon> {{login.title}}
       </button>
-      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logout()">
+      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logoutUser()">
         <ion-icon [name]="logout.icon"></ion-icon> {{logout.title}}
       </button>
     </ion-list>

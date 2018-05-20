@@ -39,5 +39,5 @@
     <button class="submitBoton" ion-button block type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
   </form>
   <span>¿No tiene una cuenta? <a href="#" (click)="goToRegister()">Registrarse</a></span><br>
-  <button margin-top ion-button color="dark" outline icon-end>Facebook <ion-icon name="logo-facebook"></ion-icon></button>
+  <button margin-top ion-button color="dark" outline icon-end (click)="facebookLogin()" >Facebook <ion-icon name="logo-facebook"></ion-icon></button>
 </ion-content>

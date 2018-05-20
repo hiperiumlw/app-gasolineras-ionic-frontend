@@ -58,7 +58,11 @@ export class MyApp {
 
     this.events.subscribe('app:login',(user)=>{
       this.handleLogin(user);
-    })
+    });
+
+    this.events.subscribe('app:loginFacebook',(user)=>{
+      this.handleLogin(user);
+    });
   }
 
   showToast(message){
@@ -75,6 +79,12 @@ export class MyApp {
     this.user = user;
     this.authService.saveUserLocally(user);
     this.nav.setRoot(MapPage);
+  }
+
+  logoutUser(){
+    this.user = null;
+    this.authService.removeUserLocally();
+    this.authService.checkFacebook();
   }
   openPage(page) {
     this.nav.setRoot(page.component);

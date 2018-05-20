@@ -19,6 +19,7 @@ import { MapServiceProvider } from '../providers/map-service/map-service';
 import { PreferencesServiceProvider } from '../providers/preferences-service/preferences-service';
 import { AdminpanelPage } from '../pages/adminpanel/adminpanel';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+import { Facebook } from '@ionic-native/facebook';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MapServiceProvider,
     PreferencesServiceProvider,
-    AuthenticationServiceProvider
+    AuthenticationServiceProvider,
+    Facebook
   ]
 })
 export class AppModule {}

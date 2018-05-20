@@ -245,6 +245,14 @@ module.exports = [
     "clobbers": [
       "SQLitePlugin"
     ]
+  },
+  {
+    "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+    "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+    "pluginId": "cordova-plugin-facebook4",
+    "clobbers": [
+      "facebookConnectPlugin"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -257,7 +265,8 @@ module.exports.metadata =
   "cordova-plugin-ionic-keyboard": "2.0.5",
   "cordova-plugin-googlemaps": "2.2.9",
   "cordova-plugin-geolocation": "4.0.1",
-  "cordova-sqlite-storage": "2.3.1"
+  "cordova-sqlite-storage": "2.3.1",
+  "cordova-plugin-facebook4": "1.10.1"
 };
 // BOTTOM OF METADATA
 });

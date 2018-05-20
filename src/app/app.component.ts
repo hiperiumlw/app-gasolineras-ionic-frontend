@@ -46,6 +46,7 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
       this.preferenceService.defaultPreferences();
+      this.checkIfUserIsLogged();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -86,6 +87,15 @@ export class MyApp {
     this.authService.removeUserLocally();
     this.authService.checkFacebook();
   }
+
+  checkIfUserIsLogged(){
+    this.authService.checkIfUserisLogged().then((value:any)=>{
+      if (value){
+        this.user = value;
+      }
+    })
+  }
+
   openPage(page) {
     this.nav.setRoot(page.component);
   }

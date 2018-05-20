@@ -536,15 +536,15 @@ var map = {
 		3
 	],
 	"../pages/popover/popover.module": [
-		299,
+		301,
 		2
 	],
 	"../pages/preferences/preferences.module": [
-		300,
+		299,
 		1
 	],
 	"../pages/register/register.module": [
-		301,
+		300,
 		0
 	]
 };
@@ -706,9 +706,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/favourites/favourites.module#FavouritesPageModule', name: 'FavouritesPage', segment: 'favourites', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/popover/popover.module#PopoverPageModule', name: 'PopoverPage', segment: 'popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/preferences/preferences.module#PreferencesPageModule', name: 'PreferencesPage', segment: 'preferences', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/popover/popover.module#PopoverPageModule', name: 'PopoverPage', segment: 'popover', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -855,6 +855,7 @@ var MyApp = /** @class */ (function () {
         var _this = this;
         this.platform.ready().then(function () {
             _this.preferenceService.defaultPreferences();
+            _this.checkIfUserIsLogged();
             _this.statusBar.styleDefault();
             _this.splashScreen.hide();
         });
@@ -888,6 +889,14 @@ var MyApp = /** @class */ (function () {
         this.user = null;
         this.authService.removeUserLocally();
         this.authService.checkFacebook();
+    };
+    MyApp.prototype.checkIfUserIsLogged = function () {
+        var _this = this;
+        this.authService.checkIfUserisLogged().then(function (value) {
+            if (value) {
+                _this.user = value;
+            }
+        });
     };
     MyApp.prototype.openPage = function (page) {
         this.nav.setRoot(page.component);
@@ -953,7 +962,7 @@ var AuthenticationServiceProvider = /** @class */ (function () {
         this.storage = storage;
         this.facebook = facebook;
         console.log('Hello AuthenticationServiceProvider Provider');
-        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://localhost:3000');
+        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://192.168.2.4:3000');
     }
     AuthenticationServiceProvider.prototype.register = function (data) {
         var _this = this;
@@ -1025,6 +1034,14 @@ var AuthenticationServiceProvider = /** @class */ (function () {
     };
     AuthenticationServiceProvider.prototype.removeUserLocally = function () {
         this.storage.remove('user-logged');
+    };
+    AuthenticationServiceProvider.prototype.checkIfUserisLogged = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.storage.get('user-logged').then(function (value) {
+                resolve(value);
+            });
+        });
     };
     AuthenticationServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),

@@ -18,7 +18,7 @@ export class AuthenticationServiceProvider {
 
   constructor(public http: HttpClient, private events: Events, private storage: Storage, private facebook: Facebook) {
     console.log('Hello AuthenticationServiceProvider Provider');
-    this.URIS = new URIS('https://localhost:3000');
+    this.URIS = new URIS('https://192.168.2.4:3000');
   }
 
   register(data: any) {
@@ -99,6 +99,14 @@ export class AuthenticationServiceProvider {
 
   removeUserLocally() {
     this.storage.remove('user-logged');
+  }
+
+  checkIfUserisLogged(){
+    return new Promise((resolve)=>{
+      this.storage.get('user-logged').then((value)=>{
+        resolve(value);
+      })
+    })
   }
 
 }

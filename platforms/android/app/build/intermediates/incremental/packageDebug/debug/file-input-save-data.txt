@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun May 20 20:20:39 CEST 2018
+#Sun May 20 23:58:02 CEST 2018
 20.base=C\:\\Users\\Usuario\\Documents\\Bootcamp\\Curso-Ionic3\\AppGasolineras\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 143.base=C\:\\Users\\Usuario\\Documents\\Bootcamp\\Curso-Ionic3\\AppGasolineras\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 493.base=C\:\\Users\\Usuario\\Documents\\Bootcamp\\Curso-Ionic3\\AppGasolineras\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_

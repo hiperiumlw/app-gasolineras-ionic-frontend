@@ -17,7 +17,8 @@ export class MapServiceProvider {
 
   getFuelStation(value){
     return new Promise(resolve=>{
-      this.http.get('http://192.168.1.42:3000/api/fuelstation/'+value+'')
+      value = encodeURI(value);
+      this.http.get('https://localhost:3000/api/fuelstation/'+value+'')
         .subscribe((data)=>{
           resolve(data);
         },(err)=>{

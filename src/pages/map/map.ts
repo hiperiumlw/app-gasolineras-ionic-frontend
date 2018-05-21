@@ -47,8 +47,6 @@ export class MapPage  {
            this.map.animateCamera({target:miPosicion,zoom:17});
          });
 
-         
-
         this.watch = this.geolocation.watchPosition({ enableHighAccuracy: true });
         this.watch.subscribe((data)=>{
           let miPosicion = new LatLng(data.coords.latitude,data.coords.longitude);
@@ -92,16 +90,9 @@ export class MapPage  {
   }
 
   addFuelStationsToMap(){
-    console.log(this.markers);
     this.preferenceService.getPreferences().then((value:any)=>{
       this.mapService.getFuelStation(value.value).then((data:any)=>{
-        data.forEach((marker)=>{
-          let latitud = (marker['Latitud']).replace(',','.');
-          let longitud = (marker['Longitud (WGS84)']).replace(',','.');
-          let location = new LatLng(parseFloat(latitud),parseFloat(longitud));
-          console.log(location);
-          this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:location});
-        })
+        console.log(data);
       });
     });
     /*this.mapService.getFuelStation().then((data:any)=>{

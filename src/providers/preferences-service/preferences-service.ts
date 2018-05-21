@@ -16,13 +16,13 @@ export class PreferencesServiceProvider {
 
   constructor(public http: HttpClient,private storage:Storage) {
     console.log('Hello PreferencesServiceProvider Provider');
-  
+
   }
 
   defaultPreferences(){
     this.storage.get('fuelpreference').then((value)=>{
       if (!value){
-        this.storage.set('fuelpreference',new FuelPreferencesModel(2,"Gasoleo B","Precio Gasoleo A",true));
+        this.storage.set('fuelpreference',new FuelPreferencesModel(2,"Gasoleo B","Precio Gasoleo B",true));
       }
     })
     

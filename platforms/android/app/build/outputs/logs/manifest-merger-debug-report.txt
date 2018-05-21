@@ -4,10 +4,10 @@ ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platf
 INJECTED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12
-MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\2bb92ef5da28ee6a5c2497d79149343f\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\e8409533641f311eea6f38a2a44a38f8\AndroidManifest.xml:2:1-9:12
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d1499a3e36cd4fa063caada648dc6a55\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\ca2bed68a205814df2ac52e876a947ea\AndroidManifest.xml:21:1-31:12
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\f66b77fcfe5c8f5f437ed5b36549b077\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\c8897db3a6c0e5a140218e3c10949c58\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\e17964376a1c44fd1e00f7c496c47d0d\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\d0aa99b6273b01eb3f12fe47bd76b8a4\AndroidManifest.xml:21:1-36:12
@@ -16,18 +16,14 @@ MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\Usuario\.gr
 MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\2ad02377cd0b2622cb5de97b4a24d23d\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7e872b5db38b8935eb36ad68af68f380\AndroidManifest.xml:21:1-53:12
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\f659bd4fb1b0e64ef306585f224ae054\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\a23d5466951e6627867441beeddf76be\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\4a0c13f8bf0f58a2a3dfa290f1fe4037\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\7cf828a4c1433cbbf780e1093bac1018\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\27dc4b67d2767fa9007669cafd2c847c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\17099c20f53c445309830e28b52eabe0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\ff46111d4f475ef7b6cfa533608f42aa\AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\e203109f2aa73f32064e45d6ea1cec24\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\c5a127cbf7989c57a053e0a982cfda26\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\0320410de8af38665f6907c8bec1b2bc\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\291c189f49496f9889389ac86ca09747\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\53e86e936d727d8df0e4f02ff19a9c53\AndroidManifest.xml:2:1-8:12
 MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\acaf7af9c808ceb6ceb477508669635a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:customtabs:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\7f08134fd1ecfb2acec977660fe62104\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\11c65dd8d7049531c6e4b76baef3e8bb\AndroidManifest.xml:17:1-22:12
@@ -69,20 +65,14 @@ ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platf
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
 	android:anyDensity
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
-uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:24:5-67
-	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:5-17:19
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\e8409533641f311eea6f38a2a44a38f8\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\e8409533641f311eea6f38a2a44a38f8\AndroidManifest.xml:7:5-20
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:5-16:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\ca2bed68a205814df2ac52e876a947ea\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\ca2bed68a205814df2ac52e876a947ea\AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\f66b77fcfe5c8f5f437ed5b36549b077\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\f66b77fcfe5c8f5f437ed5b36549b077\AndroidManifest.xml:7:5-20
 MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\c8897db3a6c0e5a140218e3c10949c58\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\c8897db3a6c0e5a140218e3c10949c58\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\e17964376a1c44fd1e00f7c496c47d0d\AndroidManifest.xml:28:5-29:19
@@ -97,104 +87,96 @@ MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\Usuario\.g
 MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\2ad02377cd0b2622cb5de97b4a24d23d\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7e872b5db38b8935eb36ad68af68f380\AndroidManifest.xml:28:5-51:19
 MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7e872b5db38b8935eb36ad68af68f380\AndroidManifest.xml:28:5-51:19
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\a23d5466951e6627867441beeddf76be\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\a23d5466951e6627867441beeddf76be\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\e203109f2aa73f32064e45d6ea1cec24\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\e203109f2aa73f32064e45d6ea1cec24\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\c5a127cbf7989c57a053e0a982cfda26\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\c5a127cbf7989c57a053e0a982cfda26\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\0320410de8af38665f6907c8bec1b2bc\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\0320410de8af38665f6907c8bec1b2bc\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\291c189f49496f9889389ac86ca09747\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\291c189f49496f9889389ac86ca09747\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\53e86e936d727d8df0e4f02ff19a9c53\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\53e86e936d727d8df0e4f02ff19a9c53\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\4a0c13f8bf0f58a2a3dfa290f1fe4037\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\4a0c13f8bf0f58a2a3dfa290f1fe4037\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\7cf828a4c1433cbbf780e1093bac1018\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\7cf828a4c1433cbbf780e1093bac1018\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:22:5-26:19
 	android:supportsRtl
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:114-140
 	android:label
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:81-113
 	android:hardwareAccelerated
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:18-52
 	android:icon
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:4:53-80
 activity#io.ionic.starter.MainActivity
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:9-10:20
 	android:label
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:97-134
 	android:launchMode
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:135-165
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:135-165
 	android:windowSoftInputMode
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:257-299
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:257-299
 	android:configChanges
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:19-96
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:19-96
 	android:theme
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:194-256
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:194-256
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:5:166-193
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:13-9:29
 	android:label
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:6:28-65
 action#android.intent.action.MAIN
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:7:17-69
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:7:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:8:17-77
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
-meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:9-124
-	android:value
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:66-121
-	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:20-65
-meta-data#com.google.android.gms.version
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:9-122
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:66-119
-	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:20-65
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:8:27-74
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:9-102
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:11:9-102
 	android:value
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:66-99
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:11:66-99
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:20-65
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:11:20-65
 meta-data#com.facebook.sdk.ApplicationName
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:9-106
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:9-106
 	android:value
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:68-103
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:68-103
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:20-67
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:12:20-67
 activity#com.facebook.FacebookActivity
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:16:9-186
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:9-186
 MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\d0aa99b6273b01eb3f12fe47bd76b8a4\AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\d0aa99b6273b01eb3f12fe47bd76b8a4\AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:16:103-138
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:103-138
 	android:configChanges
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:16:19-102
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:19-102
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\d0aa99b6273b01eb3f12fe47bd76b8a4\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:16:139-183
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:13:139-183
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:9-124
+	android:value
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:66-121
+	android:name
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:14:20-65
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:9-122
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:66-119
+	android:name
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:15:20-65
 uses-sdk
-ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:18:5-74
-MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\2bb92ef5da28ee6a5c2497d79149343f\AndroidManifest.xml:7:5-43
-MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\2bb92ef5da28ee6a5c2497d79149343f\AndroidManifest.xml:7:5-43
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\e8409533641f311eea6f38a2a44a38f8\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\e8409533641f311eea6f38a2a44a38f8\AndroidManifest.xml:5:5-44
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:17:5-74
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d1499a3e36cd4fa063caada648dc6a55\AndroidManifest.xml:7:5-9:41
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d1499a3e36cd4fa063caada648dc6a55\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\ca2bed68a205814df2ac52e876a947ea\AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\ca2bed68a205814df2ac52e876a947ea\AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\f66b77fcfe5c8f5f437ed5b36549b077\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\f66b77fcfe5c8f5f437ed5b36549b077\AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\c8897db3a6c0e5a140218e3c10949c58\AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\c8897db3a6c0e5a140218e3c10949c58\AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\e17964376a1c44fd1e00f7c496c47d0d\AndroidManifest.xml:24:5-26:41
@@ -211,12 +193,14 @@ MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle
 MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7e872b5db38b8935eb36ad68af68f380\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\f659bd4fb1b0e64ef306585f224ae054\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\f659bd4fb1b0e64ef306585f224ae054\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\a23d5466951e6627867441beeddf76be\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\a23d5466951e6627867441beeddf76be\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\86079c726f89b0388b0f274a13663e66\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\4a0c13f8bf0f58a2a3dfa290f1fe4037\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\4a0c13f8bf0f58a2a3dfa290f1fe4037\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\7cf828a4c1433cbbf780e1093bac1018\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\7cf828a4c1433cbbf780e1093bac1018\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cf1ee9faafbe6c4801e09331fe9ef2c7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\27dc4b67d2767fa9007669cafd2c847c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\27dc4b67d2767fa9007669cafd2c847c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\17099c20f53c445309830e28b52eabe0\AndroidManifest.xml:20:5-44
@@ -242,13 +226,19 @@ MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Usuario\.gradle
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\ac7b3d100e493bc3bd870e619fea1ede\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\ac7b3d100e493bc3bd870e619fea1ede\AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:18:42-71
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:17:42-71
 	android:minSdkVersion
-		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:18:15-41
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:17:15-41
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:18:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:18:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:19:5-79
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:19:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
@@ -261,8 +251,8 @@ ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platf
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:21:22-76
 uses-feature#0x00020000
 ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:22:5-78
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:26:5-28:35
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\17f0badfb5a887d24ad7ecce6945c6d2\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\6f1926ae0b332537da9002dc5f1fb03a\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:22:19-51
 	android:required
@@ -275,12 +265,6 @@ uses-feature#android.hardware.location.gps
 ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:24:5-66
 	android:name
 		ADDED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:24:19-63
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12 reason: za.co.twyst has a targetSdkVersion < 4
-uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12 reason: za.co.twyst has a targetSdkVersion < 4
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\platforms\android\app\src\main\AndroidManifest.xml:2:1-25:12 reason: za.co.twyst requested WRITE_EXTERNAL_STORAGE
 activity#com.facebook.CustomTabMainActivity
 ADDED from [com.facebook.android:facebook-common:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\d0aa99b6273b01eb3f12fe47bd76b8a4\AndroidManifest.xml:33:9-71
 	android:name
@@ -306,10 +290,10 @@ ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\
 	android:name
 		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7e872b5db38b8935eb36ad68af68f380\AndroidManifest.xml:48:25-92
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ef96c2c581d301db6b5103b8398891be\AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1afd8283a0dbf8645e4b0617152fb402\AndroidManifest.xml:24:13-79

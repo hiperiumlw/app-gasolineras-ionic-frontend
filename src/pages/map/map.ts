@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Platform,PopoverController } from 'ionic-angular';
-import {GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, Marker} from "@ionic-native/google-maps";
-import {Geolocation} from "@ionic-native/geolocation";
-import {PopoverPage} from "../popover/popover";
-import {FuelstationModel} from "../../models/fuelstation-model";
-import {MapServiceProvider} from "../../providers/map-service/map-service";
+import { IonicPage, NavController, NavParams, Platform, PopoverController } from 'ionic-angular';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, Marker, MarkerCluster } from "@ionic-native/google-maps";
+import { Geolocation } from "@ionic-native/geolocation";
+import { PopoverPage } from "../popover/popover";
+import { FuelstationModel } from "../../models/fuelstation-model";
+import { MapServiceProvider } from "../../providers/map-service/map-service";
 import { PreferencesServiceProvider } from '../../providers/preferences-service/preferences-service';
 
 /**
@@ -18,50 +18,54 @@ import { PreferencesServiceProvider } from '../../providers/preferences-service/
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
-  providers:[GoogleMaps,Geolocation]
+  providers: [GoogleMaps, Geolocation]
 })
-export class MapPage  {
+export class MapPage {
 
-  public map:GoogleMap;
-  public watch:any;
+  public map: GoogleMap;
+  public watch: any;
   public myTarget: Marker;
-  public fuelStations:FuelstationModel[];
+  public fuelStations: FuelstationModel[];
   public markers: Array<any> = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams,public googleMaps:GoogleMaps,
-              private platform:Platform,private geolocation:Geolocation,private popoverController:PopoverController,
-              public mapService:MapServiceProvider,private preferenceService:PreferencesServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public googleMaps: GoogleMaps,
+    private platform: Platform, private geolocation: Geolocation, private popoverController: PopoverController,
+    public mapService: MapServiceProvider, private preferenceService: PreferencesServiceProvider) {
 
   }
 
   ionViewDidLoad() {
-    this.platform.ready().then(()=>{
-      this.map = this.googleMaps.create('map',{controls: {
+    this.platform.ready().then(() => {
+      this.map = this.googleMaps.create('map', {
+        controls: {
           'compass': true,
           'indoorPicker': true,
           'zoom': true
-        }});
-      this.map.one(GoogleMapsEvent.MAP_READY).then((data:any)=>{
+        }
+      });
+      this.map.one(GoogleMapsEvent.MAP_READY).then((data: any) => {
+        console.log("Entro aqui Mapa Ready");
         //Centrar el mapa dependiendo de nuestra localización
-        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos)=>{
-           let miPosicion = new LatLng(pos.coords.latitude,pos.coords.longitude);
-           this.map.animateCamera({target:miPosicion,zoom:17});
-         });
+        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
+          console.log("Entro aqui getcurrentposition");
+          let miPosicion = new LatLng(pos.coords.latitude, pos.coords.longitude);
+          this.map.animateCamera({ target: miPosicion, zoom: 17 });
+        });
 
         this.watch = this.geolocation.watchPosition({ enableHighAccuracy: true });
-        this.watch.subscribe((data)=>{
-          let miPosicion = new LatLng(data.coords.latitude,data.coords.longitude);
+        this.watch.subscribe((data) => {
+          let miPosicion = new LatLng(data.coords.latitude, data.coords.longitude);
           console.log("Entro en subscribe")
-          if (this.myTarget != null){
+          if (this.myTarget != null) {
             this.myTarget.remove();
-            this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:miPosicion}).then((marker)=>{this.myTarget=marker});
+            this.map.addMarker({ icon: 'assets/imgs/customMarker.jpg', position: miPosicion }).then((marker) => { this.myTarget = marker });
           } else {
-            this.map.addMarker({icon:'assets/imgs/customMarker.jpg',position:miPosicion}).then((marker)=>{this.myTarget=marker});
+            this.map.addMarker({ icon: 'assets/imgs/customMarker.jpg', position: miPosicion }).then((marker) => { this.myTarget = marker });
           }
         })
-      }).catch((err)=>{
+      }).catch((err) => {
         console.log("Error -> " + err);
       })
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log("Error ->" + err);
     })
   }
@@ -71,7 +75,7 @@ export class MapPage  {
       this.watch.unsubscribe();
   }*/
 
-  ionViewWillLeave(){
+  ionViewWillLeave() {
     this.watch.unsubscribe();
   }
   presentPopover(myEvent) {
@@ -81,18 +85,28 @@ export class MapPage  {
     });
   }
 
-  centerCamera(){
+  centerCamera() {
     //Centrar el mapa dependiendo de nuestra localización
-    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos)=>{
-      let miPosicion = new LatLng(pos.coords.latitude,pos.coords.longitude);
-      this.map.animateCamera({target:miPosicion,zoom:17});
+    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
+      let miPosicion = new LatLng(pos.coords.latitude, pos.coords.longitude);
+      this.map.animateCamera({ target: miPosicion, zoom: 17 });
     })
   }
 
-  addFuelStationsToMap(){
-    this.preferenceService.getPreferences().then((value:any)=>{
-      this.mapService.getFuelStation(value.value).then((data:any)=>{
+  addFuelStationsToMap() {
+    this.preferenceService.getPreferences().then((value: any) => {
+      this.mapService.getFuelStation(value.value).then((data: any) => {
         console.log(data);
+        let markerCluster: MarkerCluster = this.map.addMarkerClusterSync({
+          markers: data,
+          icons: [
+            {
+              min: 3, 
+              url: "assets/imgs/customMarker.jpg",
+              label: { color: "white" }
+            }
+          ]
+        });
       });
     });
     /*this.mapService.getFuelStation().then((data:any)=>{

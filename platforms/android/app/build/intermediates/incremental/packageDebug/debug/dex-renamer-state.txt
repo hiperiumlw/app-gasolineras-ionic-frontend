@@ -1,4 +1,4 @@
-#Sun May 20 23:58:01 CEST 2018
+#Mon May 21 15:36:36 CEST 2018
 base.0=C\:\\Users\\Usuario\\Documents\\Bootcamp\\Curso-Ionic3\\AppGasolineras\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 file.0=C\:\\Users\\Usuario\\Documents\\Bootcamp\\Curso-Ionic3\\AppGasolineras\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

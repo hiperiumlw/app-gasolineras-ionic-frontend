@@ -139,14 +139,18 @@ var MapPage = /** @class */ (function () {
     MapPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.platform.ready().then(function () {
-            _this.map = _this.googleMaps.create('map', { controls: {
+            _this.map = _this.googleMaps.create('map', {
+                controls: {
                     'compass': true,
                     'indoorPicker': true,
                     'zoom': true
-                } });
+                }
+            });
             _this.map.one(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["b" /* GoogleMapsEvent */].MAP_READY).then(function (data) {
+                console.log("Entro aqui Mapa Ready");
                 //Centrar el mapa dependiendo de nuestra localización
                 _this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then(function (pos) {
+                    console.log("Entro aqui getcurrentposition");
                     var miPosicion = new __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* LatLng */](pos.coords.latitude, pos.coords.longitude);
                     _this.map.animateCamera({ target: miPosicion, zoom: 17 });
                 });
@@ -195,6 +199,16 @@ var MapPage = /** @class */ (function () {
         this.preferenceService.getPreferences().then(function (value) {
             _this.mapService.getFuelStation(value.value).then(function (data) {
                 console.log(data);
+                var markerCluster = _this.map.addMarkerClusterSync({
+                    markers: data,
+                    icons: [
+                        {
+                            min: 3,
+                            url: "assets/imgs/customMarker.jpg",
+                            label: { color: "white" }
+                        }
+                    ]
+                });
             });
         });
         /*this.mapService.getFuelStation().then((data:any)=>{
@@ -270,140 +284,6 @@ var PopoverPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 111:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreferencesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__ = __webpack_require__(48);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the PreferencesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PreferencesPage = /** @class */ (function () {
-    function PreferencesPage(navCtrl, navParams, preferenceService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.preferenceService = preferenceService;
-    }
-    PreferencesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PreferencesPage');
-    };
-    PreferencesPage.prototype.ionViewWillEnter = function () {
-        this.preferenceService.checkPreferences();
-    };
-    PreferencesPage.prototype.savePreferences = function () {
-        this.preferenceService.savePreferences(this.type);
-    };
-    PreferencesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-preferences',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\preferences\preferences.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      Preferencias App v1.0\n    </ion-title>\n\n    <ion-buttons end>\n      <!--<button ion-button icon-only (click)="openModal()">-->\n        <!--<ion-icon name="refresh"></ion-icon>-->\n      <!--</button>-->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-label>Tipo de Combustible : </ion-label>\n  <ion-item padding-left padding-right>\n    <ion-label>Combustible</ion-label>\n    <ion-select [(ngModel)]="type">\n      <ion-option *ngFor="let fuelstation of preferenceService.fuelPreferences" value="{{fuelstation.id}}" [selected]="fuelstation.selected">{{fuelstation.title}}</ion-option>\n    </ion-select>\n  </ion-item>\n  <button ion-button margin-top color="danger" outline block (click)="savePreferences()">Guardar</button>\n  {{type}}\n</ion-content>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\preferences\preferences.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__["a" /* PreferencesServiceProvider */]])
-    ], PreferencesPage);
-    return PreferencesPage;
-}());
-
-//# sourceMappingURL=preferences.js.map
-
-/***/ }),
-
-/***/ 112:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(49);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var RegisterPage = /** @class */ (function () {
-    function RegisterPage(navCtrl, navParams, formBuilder, authService, events) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.formBuilder = formBuilder;
-        this.authService = authService;
-        this.events = events;
-        this.registerForm = this.createForm();
-    }
-    RegisterPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RegisterPage');
-    };
-    RegisterPage.prototype.createForm = function () {
-        return this.formBuilder.group({
-            name: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            reppassword: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]
-        });
-    };
-    RegisterPage.prototype.register = function () {
-        var _this = this;
-        this.authService.register(this.registerForm.value)
-            .then(function (data) {
-            _this.registerCorrectly(data);
-        })
-            .catch(function () {
-            console.log("Ha habido algun error -> AuthService");
-        });
-    };
-    RegisterPage.prototype.registerCorrectly = function (data) {
-        this.events.publish('app:toast', data.message);
-        this.navCtrl.pop();
-    };
-    RegisterPage.prototype.goBack = function () {
-        this.navCtrl.pop();
-    };
-    RegisterPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\register\register.html"*/'<ion-header>\n  <ion-navbar color="danger">\n\n\n    <ion-title>\n      Registrarse App v1.0\n    </ion-title>\n\n    <ion-buttons end>\n      <!--<button ion-button icon-only (click)="openModal()">-->\n      <!--<ion-icon name="refresh"></ion-icon>-->\n      <!--</button>-->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content text-center>\n  <img src="assets/imgs/mobilendo.png" width="270px">\n  <hr>\n  <ion-title>\n    Registrarse\n  </ion-title>\n  <form padding [formGroup]="registerForm" (ngSubmit)="register()">\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="person"></ion-icon></ion-label>\n      <ion-input type="text" formControlName="name" placeholder="Nombre Completo"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="mail"></ion-icon></ion-label>\n      <ion-input type="mail" formControlName="email" placeholder="Correo Electrónico"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="unlock"></ion-icon></ion-label>\n      <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="unlock"></ion-icon></ion-label>\n      <ion-input type="password" formControlName="reppassword" placeholder="Repite la contraseña"></ion-input>\n    </ion-item>\n    <button class="submitBoton" ion-button block type="submit" [disabled]="!registerForm.valid">Registrarse</button>\n  </form>\n  <span>¿Tiene una cuenta ya registrada? <a href="#" (click)="goBack()">Iniciar Sesión</a></span><br>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\register\register.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
-    ], RegisterPage);
-    return RegisterPage;
-}());
-
-//# sourceMappingURL=register.js.map
-
-/***/ }),
-
-/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -491,6 +371,140 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 112:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(49);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the RegisterPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, formBuilder, authService, events) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.formBuilder = formBuilder;
+        this.authService = authService;
+        this.events = events;
+        this.registerForm = this.createForm();
+    }
+    RegisterPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RegisterPage');
+    };
+    RegisterPage.prototype.createForm = function () {
+        return this.formBuilder.group({
+            name: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+            reppassword: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]
+        });
+    };
+    RegisterPage.prototype.register = function () {
+        var _this = this;
+        this.authService.register(this.registerForm.value)
+            .then(function (data) {
+            _this.registerCorrectly(data);
+        })
+            .catch(function () {
+            console.log("Ha habido algun error -> AuthService");
+        });
+    };
+    RegisterPage.prototype.registerCorrectly = function (data) {
+        this.events.publish('app:toast', data.message);
+        this.navCtrl.pop();
+    };
+    RegisterPage.prototype.goBack = function () {
+        this.navCtrl.pop();
+    };
+    RegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\register\register.html"*/'<ion-header>\n  <ion-navbar color="danger">\n\n\n    <ion-title>\n      Registrarse App v1.0\n    </ion-title>\n\n    <ion-buttons end>\n      <!--<button ion-button icon-only (click)="openModal()">-->\n      <!--<ion-icon name="refresh"></ion-icon>-->\n      <!--</button>-->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content text-center>\n  <img src="assets/imgs/mobilendo.png" width="270px">\n  <hr>\n  <ion-title>\n    Registrarse\n  </ion-title>\n  <form padding [formGroup]="registerForm" (ngSubmit)="register()">\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="person"></ion-icon></ion-label>\n      <ion-input type="text" formControlName="name" placeholder="Nombre Completo"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="mail"></ion-icon></ion-label>\n      <ion-input type="mail" formControlName="email" placeholder="Correo Electrónico"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="unlock"></ion-icon></ion-label>\n      <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>\n    </ion-item>\n    <ion-item padding-left padding-right>\n      <ion-label><ion-icon name="unlock"></ion-icon></ion-label>\n      <ion-input type="password" formControlName="reppassword" placeholder="Repite la contraseña"></ion-input>\n    </ion-item>\n    <button class="submitBoton" ion-button block type="submit" [disabled]="!registerForm.valid">Registrarse</button>\n  </form>\n  <span>¿Tiene una cuenta ya registrada? <a href="#" (click)="goBack()">Iniciar Sesión</a></span><br>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\register\register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
+    ], RegisterPage);
+    return RegisterPage;
+}());
+
+//# sourceMappingURL=register.js.map
+
+/***/ }),
+
+/***/ 113:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreferencesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__ = __webpack_require__(48);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the PreferencesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PreferencesPage = /** @class */ (function () {
+    function PreferencesPage(navCtrl, navParams, preferenceService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.preferenceService = preferenceService;
+    }
+    PreferencesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PreferencesPage');
+    };
+    PreferencesPage.prototype.ionViewWillEnter = function () {
+        this.preferenceService.checkPreferences();
+    };
+    PreferencesPage.prototype.savePreferences = function () {
+        this.preferenceService.savePreferences(this.type);
+    };
+    PreferencesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-preferences',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\preferences\preferences.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      Preferencias App v1.0\n    </ion-title>\n\n    <ion-buttons end>\n      <!--<button ion-button icon-only (click)="openModal()">-->\n        <!--<ion-icon name="refresh"></ion-icon>-->\n      <!--</button>-->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-label>Tipo de Combustible : </ion-label>\n  <ion-item padding-left padding-right>\n    <ion-label>Combustible</ion-label>\n    <ion-select [(ngModel)]="type">\n      <ion-option *ngFor="let fuelstation of preferenceService.fuelPreferences" value="{{fuelstation.id}}" [selected]="fuelstation.selected">{{fuelstation.title}}</ion-option>\n    </ion-select>\n  </ion-item>\n  <button ion-button margin-top color="danger" outline block (click)="savePreferences()">Guardar</button>\n  {{type}}\n</ion-content>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\preferences\preferences.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__["a" /* PreferencesServiceProvider */]])
+    ], PreferencesPage);
+    return PreferencesPage;
+}());
+
+//# sourceMappingURL=preferences.js.map
+
+/***/ }),
+
 /***/ 125:
 /***/ (function(module, exports) {
 
@@ -521,7 +535,7 @@ var map = {
 		5
 	],
 	"../pages/login/login.module": [
-		301,
+		298,
 		4
 	],
 	"../pages/map/map.module": [
@@ -529,15 +543,15 @@ var map = {
 		3
 	],
 	"../pages/popover/popover.module": [
-		298,
+		299,
 		2
 	],
 	"../pages/preferences/preferences.module": [
-		299,
+		300,
 		1
 	],
 	"../pages/register/register.module": [
-		300,
+		301,
 		0
 	]
 };
@@ -593,7 +607,7 @@ var MapServiceProvider = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve) {
             value = encodeURI(value);
-            _this.http.get('https://localhost:3000/api/fuelstation/' + value + '')
+            _this.http.get('https://192.168.1.105:3000/api/fuelstation/' + value + '')
                 .subscribe(function (data) {
                 resolve(data);
             }, function (err) {
@@ -603,10 +617,9 @@ var MapServiceProvider = /** @class */ (function () {
     };
     MapServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], MapServiceProvider);
     return MapServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=map-service.js.map
@@ -641,9 +654,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_map_map__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_favourites_favourites__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_register_register__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_preferences_preferences__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_preferences_preferences__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_map_service_map_service__ = __webpack_require__(169);
@@ -700,10 +713,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/adminpanel/adminpanel.module#AdminpanelPageModule', name: 'AdminpanelPage', segment: 'adminpanel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favourites/favourites.module#FavouritesPageModule', name: 'FavouritesPage', segment: 'favourites', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/popover/popover.module#PopoverPageModule', name: 'PopoverPage', segment: 'popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/preferences/preferences.module#PreferencesPageModule', name: 'PreferencesPage', segment: 'preferences', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -800,8 +813,8 @@ var URIS = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_map_map__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favourites_favourites__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_preferences_service_preferences_service__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_adminpanel_adminpanel__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_authentication_service_authentication_service__ = __webpack_require__(49);
@@ -956,7 +969,7 @@ var PreferencesServiceProvider = /** @class */ (function () {
         var _this = this;
         this.storage.get('fuelpreference').then(function (value) {
             if (!value) {
-                _this.storage.set('fuelpreference', new __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__["a" /* FuelPreferencesModel */](2, "Gasoleo B", "Precio Gasoleo A", true));
+                _this.storage.set('fuelpreference', new __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__["a" /* FuelPreferencesModel */](2, "Gasoleo B", "Precio Gasoleo B", true));
             }
         });
     };
@@ -995,10 +1008,9 @@ var PreferencesServiceProvider = /** @class */ (function () {
     };
     PreferencesServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], PreferencesServiceProvider);
     return PreferencesServiceProvider;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=preferences-service.js.map
@@ -1047,7 +1059,7 @@ var AuthenticationServiceProvider = /** @class */ (function () {
         this.storage = storage;
         this.facebook = facebook;
         console.log('Hello AuthenticationServiceProvider Provider');
-        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://192.168.2.4:3000');
+        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://192.168.1.105:3000');
     }
     AuthenticationServiceProvider.prototype.register = function (data) {
         var _this = this;

@@ -25,6 +25,36 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-geolocation.geolocation",
+    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "navigator.geolocation"
+    ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.PositionError",
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "runs": true
+  },
+  {
+    "id": "cordova-sqlite-storage.SQLitePlugin",
+    "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+    "pluginId": "cordova-sqlite-storage",
+    "clobbers": [
+      "SQLitePlugin"
+    ]
+  },
+  {
+    "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+    "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+    "pluginId": "cordova-plugin-facebook4",
+    "clobbers": [
+      "facebookConnectPlugin"
+    ]
+  },
+  {
     "id": "cordova-plugin-googlemaps.BaseClass",
     "file": "plugins/cordova-plugin-googlemaps/www/BaseClass.js",
     "pluginId": "cordova-plugin-googlemaps",
@@ -217,41 +247,23 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-googlemaps.StreetViewPanorama",
+    "file": "plugins/cordova-plugin-googlemaps/www/StreetViewPanorama.js",
+    "pluginId": "cordova-plugin-googlemaps",
+    "runs": true
+  },
+  {
+    "id": "cordova-plugin-googlemaps.Overlay",
+    "file": "plugins/cordova-plugin-googlemaps/www/Overlay.js",
+    "pluginId": "cordova-plugin-googlemaps",
+    "runs": true
+  },
+  {
     "id": "cordova-plugin-googlemaps.googlemaps-cdv-plugin",
     "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
     "pluginId": "cordova-plugin-googlemaps",
     "clobbers": [
       "plugin.google.maps"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.geolocation",
-    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "clobbers": [
-      "navigator.geolocation"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.PositionError",
-    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "runs": true
-  },
-  {
-    "id": "cordova-sqlite-storage.SQLitePlugin",
-    "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-    "pluginId": "cordova-sqlite-storage",
-    "clobbers": [
-      "SQLitePlugin"
-    ]
-  },
-  {
-    "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-    "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-    "pluginId": "cordova-plugin-facebook4",
-    "clobbers": [
-      "facebookConnectPlugin"
     ]
   }
 ];
@@ -263,10 +275,10 @@ module.exports.metadata =
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-ionic-webview": "1.1.19",
   "cordova-plugin-ionic-keyboard": "2.0.5",
-  "cordova-plugin-googlemaps": "2.2.9",
   "cordova-plugin-geolocation": "4.0.1",
   "cordova-sqlite-storage": "2.3.1",
-  "cordova-plugin-facebook4": "1.10.1"
+  "cordova-plugin-facebook4": "1.10.1",
+  "cordova-plugin-googlemaps": "2.3.3"
 };
 // BOTTOM OF METADATA
 });

@@ -18,7 +18,7 @@ export class AuthenticationServiceProvider {
 
   constructor(public http: HttpClient, private events: Events, private storage: Storage, private facebook: Facebook) {
     console.log('Hello AuthenticationServiceProvider Provider');
-    this.URIS = new URIS('https://192.168.2.4:3000');
+    this.URIS = new URIS('https://192.168.1.105:3000');
   }
 
   register(data: any) {

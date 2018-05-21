@@ -39,17 +39,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-googlemaps": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-googlemaps@^2.2.9"
-    },
-    "is_top_level": true,
-    "variables": {
-      "API_KEY_FOR_ANDROID": "AIzaSyB24xikRBPlk-q5mUeHPYwJKTIBDYXxBBg",
-      "API_KEY_FOR_IOS": "AIzaSyB24xikRBPlk-q5mUeHPYwJKTIBDYXxBBg"
-    }
-  },
   "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",
@@ -77,6 +66,17 @@
     "variables": {
       "APP_ID": "2107678939508903",
       "APP_NAME": "APPGasolineras"
+    }
+  },
+  "cordova-plugin-googlemaps": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googlemaps"
+    },
+    "is_top_level": true,
+    "variables": {
+      "API_KEY_FOR_ANDROID": "AIzaSyB24xikRBPlk-q5mUeHPYwJKTIBDYXxBBg",
+      "API_KEY_FOR_IOS": "AIzaSyB24xikRBPlk-q5mUeHPYwJKTIBDYXxBBg"
     }
   }
 }

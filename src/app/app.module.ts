@@ -20,6 +20,7 @@ import { PreferencesServiceProvider } from '../providers/preferences-service/pre
 import { AdminpanelPage } from '../pages/adminpanel/adminpanel';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 import { Facebook } from '@ionic-native/facebook';
+import { FuelstationsPage } from '../pages/fuelstations/fuelstations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { Facebook } from '@ionic-native/facebook';
     LoginPage,
     RegisterPage,
     PreferencesPage,
-    AdminpanelPage
+    AdminpanelPage,
+    FuelstationsPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { Facebook } from '@ionic-native/facebook';
     LoginPage,
     RegisterPage,
     PreferencesPage,
-    AdminpanelPage
+    AdminpanelPage,
+    FuelstationsPage
   ],
   providers: [
     StatusBar,

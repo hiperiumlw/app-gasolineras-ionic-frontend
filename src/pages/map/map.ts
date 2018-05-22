@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, PopoverController, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, PopoverController, Events,ToastController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, Marker, MarkerCluster } from "@ionic-native/google-maps";
 import { Geolocation } from "@ionic-native/geolocation";
 import { PopoverPage } from "../popover/popover";
 import { FuelstationModel } from "../../models/fuelstation-model";
 import { MapServiceProvider } from "../../providers/map-service/map-service";
 import { PreferencesServiceProvider } from '../../providers/preferences-service/preferences-service';
+import { FuelstationsPage } from '../fuelstations/fuelstations';
 
 /**
  * Generated class for the MapPage page.
@@ -27,11 +28,18 @@ export class MapPage {
   public myTarget: Marker;
   public fuelStations: FuelstationModel[];
   public markerCluster: MarkerCluster;
+  public markers:Marker[];
+
+  public firstLoad:boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, public googleMaps: GoogleMaps,
     private platform: Platform, private geolocation: Geolocation, private popoverController: PopoverController,
     public mapService: MapServiceProvider, private preferenceService: PreferencesServiceProvider,
-    private events: Events) {
+    private events: Events, private toastCtrl:ToastController) {
 
+  }
+
+  ionViewDidEnter(){
+    (!this.firstLoad) ? this.map.setDiv('map') : this.firstLoad = false;
   }
 
   ionViewDidLoad() {
@@ -69,13 +77,11 @@ export class MapPage {
     })
   }
 
-  /*ionViewDidLeave(){
-      console.log("Me salgo")
-      this.watch.unsubscribe();
-  }*/
-
   ionViewWillLeave() {
-    this.watch.unsubscribe();
+    //No necesario ya que al quitar el elemento HTML se destruye el mapa.
+    //this.watch.unsubscribe();
+
+    this.map.setDiv(null);
   }
   presentPopover(myEvent) {
     let popover = this.popoverController.create(PopoverPage);
@@ -97,7 +103,7 @@ export class MapPage {
     this.preferenceService.getPreferences().then((value: any) => {
       this.mapService.getFuelStation(value.value).then((data: any) => {
         this.events.publish('app:hideLoading');
-        console.log(data);
+        this.markers = data;
         this.markerCluster = this.map.addMarkerClusterSync({
           markers: data,
           icons: [
@@ -120,7 +126,7 @@ export class MapPage {
         });
         this.markerCluster.on(GoogleMapsEvent.MARKER_CLICK).subscribe((params) => {
           let marker: Marker = params[1];
-          marker.setTitle(marker.get("name"));
+          marker.setTitle(marker.get("name")+" "+marker.get('price')+"€");
           marker.setSnippet(marker.get("schedule"));
           marker.showInfoWindow();
           marker.addListenerOnce(GoogleMapsEvent.INFO_CLICK).then(()=>{
@@ -129,12 +135,27 @@ export class MapPage {
         });
       });
     });
-    /*this.mapService.getFuelStation().then((data:any)=>{
-      data.forEach((marker)=>{
-        let miPosicion = new LatLng(marker['Latitud'],marker['Longitud (WGS84)']);
-        this.markers.push({position:miPosicion});
-      })
-    });*/
+  }
 
+  showVisibleFuelStations(){
+    let markersAux:Marker[] = [];
+    this.markers.forEach((marker:any)=>{
+      (this.map.getVisibleRegion().contains(marker.position)) && markersAux.push(marker);
+    });
+    (markersAux.length === 0) ? this.showToast("No hay gasolineras visibles en esta zona del mapa...") : this.goToFuelStationsPage(markersAux);
+  }
+
+  showToast(message){
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      position: 'top'
+    })
+
+    toast.present();
+  }
+
+  goToFuelStationsPage(markersAux:Marker[]){
+    this.navCtrl.push(FuelstationsPage,{markersAux});
   }
 }

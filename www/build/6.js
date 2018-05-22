@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 295:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminpanelPageModule", function() { return AdminpanelPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FavouritesPageModule", function() { return FavouritesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adminpanel__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favourites__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminpanelPageModule = /** @class */ (function () {
-    function AdminpanelPageModule() {
+var FavouritesPageModule = /** @class */ (function () {
+    function FavouritesPageModule() {
     }
-    AdminpanelPageModule = __decorate([
+    FavouritesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__adminpanel__["a" /* AdminpanelPage */],
+                __WEBPACK_IMPORTED_MODULE_2__favourites__["a" /* FavouritesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adminpanel__["a" /* AdminpanelPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__favourites__["a" /* FavouritesPage */]),
             ],
         })
-    ], AdminpanelPageModule);
-    return AdminpanelPageModule;
+    ], FavouritesPageModule);
+    return FavouritesPageModule;
 }());
 
-//# sourceMappingURL=adminpanel.module.js.map
+//# sourceMappingURL=favourites.module.js.map
 
 /***/ })
 

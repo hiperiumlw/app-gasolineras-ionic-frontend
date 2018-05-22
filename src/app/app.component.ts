@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, Events, ToastController } from 'ionic-angular';
+import { Nav, Platform, Events, ToastController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,29 +18,31 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = MapPage;
-  pages: Array<{title: string, component: any, icon:string}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
-  login:any;
+  login: any;
   logout: any;
-  adminpanel:any;
+  adminpanel: any;
 
-  user:UserModel;
+  user: UserModel;
+
+  loading: any;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen
-    ,private preferenceService:PreferencesServiceProvider,
-    private events:Events,private toastCtrl:ToastController,
-    private authService:AuthenticationServiceProvider) {
+    , private preferenceService: PreferencesServiceProvider,
+    private events: Events, private toastCtrl: ToastController,
+    private authService: AuthenticationServiceProvider, private loadingCtrl: LoadingController) {
     this.initializeApp();
     this.initializeEvents();
     this.pages = [
-      { title: 'Mapa', component:MapPage , icon: 'map'},
-      { title: 'Favoritos', component:FavouritesPage, icon: 'star'},
-      { title: 'Preferencias', component:PreferencesPage, icon: 'settings'},
+      { title: 'Mapa', component: MapPage, icon: 'map' },
+      { title: 'Favoritos', component: FavouritesPage, icon: 'star' },
+      { title: 'Preferencias', component: PreferencesPage, icon: 'settings' },
     ];
 
-    this.login = {title: 'Iniciar Sesión', component:LoginPage,icon:'person'};
-    this.logout = {title: 'Cerrar Sesión', icon:'log-out'};
-    this.adminpanel = {title: 'Admin Panel',component:AdminpanelPage,icon:'open'}
+    this.login = { title: 'Iniciar Sesión', component: LoginPage, icon: 'person' };
+    this.logout = { title: 'Cerrar Sesión', icon: 'log-out' };
+    this.adminpanel = { title: 'Admin Panel', component: AdminpanelPage, icon: 'open' }
   }
 
   initializeApp() {
@@ -52,45 +54,65 @@ export class MyApp {
     });
   }
 
-  initializeEvents(){
-    this.events.subscribe('app:toast',(message)=>{
+  initializeEvents() {
+    this.events.subscribe('app:toast', (message) => {
       this.showToast(message);
     });
 
-    this.events.subscribe('app:login',(user)=>{
+    this.events.subscribe('app:login', (user) => {
       this.handleLogin(user);
     });
 
-    this.events.subscribe('app:loginFacebook',(user)=>{
+    this.events.subscribe('app:loginFacebook', (user) => {
       this.handleLogin(user);
     });
+
+    this.events.subscribe('app:showLoading', (message) => {
+      this.showLoading(message);
+    });
+
+    this.events.subscribe('app:hideLoading',()=>{
+      this.hideLoading();
+    })
   }
 
-  showToast(message){
+  showToast(message) {
     let toast = this.toastCtrl.create({
-      message:message,
-      duration:3000,
-      position:'top'
+      message: message,
+      duration: 3000,
+      position: 'top'
     })
 
     toast.present();
   }
 
-  handleLogin(user){
+  handleLogin(user) {
     this.user = user;
     this.authService.saveUserLocally(user);
     this.nav.setRoot(MapPage);
   }
 
-  logoutUser(){
+  showLoading(message) {
+    this.loading = this.loadingCtrl.create({
+      content: message
+    });
+
+    this.loading.present();
+  }
+
+  hideLoading() {
+    this.loading.dismiss();
+  }
+
+  logoutUser() {
     this.user = null;
     this.authService.removeUserLocally();
     this.authService.checkFacebook();
   }
 
-  checkIfUserIsLogged(){
-    this.authService.checkIfUserisLogged().then((value:any)=>{
-      if (value){
+  checkIfUserIsLogged() {
+    this.authService.checkIfUserisLogged().then((value: any) => {
+      if (value) {
         this.user = value;
       }
     })

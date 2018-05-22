@@ -228,11 +228,11 @@
           "/resources": [
             {
               "xml": "<string name=\"fb_app_id\">2107678939508903</string>",
-              "count": 35
+              "count": 58
             },
             {
               "xml": "<string name=\"fb_app_name\">APPGasolineras</string>",
-              "count": 35
+              "count": 58
             }
           ]
         }

@@ -22,7 +22,7 @@ export class PreferencesServiceProvider {
   defaultPreferences(){
     this.storage.get('fuelpreference').then((value)=>{
       if (!value){
-        this.storage.set('fuelpreference',new FuelPreferencesModel(2,"Gasoleo B","Precio Gasoleo B",true));
+        this.storage.set('fuelpreference',new FuelPreferencesModel(2,"Gasoleo B","Precio Gasoleo A",true));
       }
     })
     

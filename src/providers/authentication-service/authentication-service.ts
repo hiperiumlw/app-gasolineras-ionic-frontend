@@ -18,7 +18,7 @@ export class AuthenticationServiceProvider {
 
   constructor(public http: HttpClient, private events: Events, private storage: Storage, private facebook: Facebook) {
     console.log('Hello AuthenticationServiceProvider Provider');
-    this.URIS = new URIS('https://192.168.1.105:3000');
+    this.URIS = new URIS('https://localhost:3000');
   }
 
   register(data: any) {
@@ -43,6 +43,7 @@ export class AuthenticationServiceProvider {
       this.http.post(this.URIS.LOGIN, data)
         .subscribe(
           (data: any) => {
+            this.events.publish('app:showLoading','Iniciando Sesión...');
             resolve(data);
           },
           (error) => {
@@ -94,7 +95,9 @@ export class AuthenticationServiceProvider {
   }
 
   saveUserLocally(user) {
-    this.storage.set('user-logged', user);
+    this.storage.set('user-logged', user).then(()=>{
+      this.events.publish('app:hideLoading');
+    })
   }
 
   removeUserLocally() {

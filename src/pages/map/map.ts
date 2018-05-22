@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, PopoverController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, PopoverController, Events } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, Marker, MarkerCluster } from "@ionic-native/google-maps";
 import { Geolocation } from "@ionic-native/geolocation";
 import { PopoverPage } from "../popover/popover";
@@ -26,10 +26,11 @@ export class MapPage {
   public watch: any;
   public myTarget: Marker;
   public fuelStations: FuelstationModel[];
-  public markers: Array<any> = [];
+  public markerCluster: MarkerCluster;
   constructor(public navCtrl: NavController, public navParams: NavParams, public googleMaps: GoogleMaps,
     private platform: Platform, private geolocation: Geolocation, private popoverController: PopoverController,
-    public mapService: MapServiceProvider, private preferenceService: PreferencesServiceProvider) {
+    public mapService: MapServiceProvider, private preferenceService: PreferencesServiceProvider,
+    private events: Events) {
 
   }
 
@@ -43,10 +44,8 @@ export class MapPage {
         }
       });
       this.map.one(GoogleMapsEvent.MAP_READY).then((data: any) => {
-        console.log("Entro aqui Mapa Ready");
         //Centrar el mapa dependiendo de nuestra localización
         this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
-          console.log("Entro aqui getcurrentposition");
           let miPosicion = new LatLng(pos.coords.latitude, pos.coords.longitude);
           this.map.animateCamera({ target: miPosicion, zoom: 17 });
         });
@@ -94,18 +93,39 @@ export class MapPage {
   }
 
   addFuelStationsToMap() {
+    this.events.publish('app:showLoading', 'Por favor , espere mientras carga...');
     this.preferenceService.getPreferences().then((value: any) => {
       this.mapService.getFuelStation(value.value).then((data: any) => {
+        this.events.publish('app:hideLoading');
         console.log(data);
-        let markerCluster: MarkerCluster = this.map.addMarkerClusterSync({
+        this.markerCluster = this.map.addMarkerClusterSync({
           markers: data,
           icons: [
             {
-              min: 3, 
-              url: "assets/imgs/customMarker.jpg",
+              min: 3, max: 9,
+              url: "assets/imgs/markerCluster/m1.png",
+              label: { color: "white" }
+            },
+            {
+              min: 10, max:100,
+              url: "assets/imgs/markerCluster/m2.png",
+              label: { color: "white" }
+            },
+            {
+              min: 101, 
+              url: "assets/imgs/markerCluster/m3.png",
               label: { color: "white" }
             }
           ]
+        });
+        this.markerCluster.on(GoogleMapsEvent.MARKER_CLICK).subscribe((params) => {
+          let marker: Marker = params[1];
+          marker.setTitle(marker.get("name"));
+          marker.setSnippet(marker.get("schedule"));
+          marker.showInfoWindow();
+          marker.addListenerOnce(GoogleMapsEvent.INFO_CLICK).then(()=>{
+            console.log(this.map.getVisibleRegion());
+          })
         });
       });
     });

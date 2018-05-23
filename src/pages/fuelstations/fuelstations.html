@@ -6,13 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>fuelstations</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>FuelStations App v1.0</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-card *ngFor="let marker of markers">
+  
+    <ion-item>
+      <ion-icon name="pin" item-start large color="danger"></ion-icon>
+      <h2>{{marker.name}}</h2>
+      <p>{{marker.schedule}}</p>
+    </ion-item>
 
+    <ion-item>
+      <span item-left>{{marker.distance}}</span>
+      <span item-left>{{marker.price}}€/L</span>
+      <button ion-button icon-left outline item-end (click)="goToDetails(marker)">
+        <ion-icon name="information-circle"></ion-icon>
+        Detalles
+      </button>
+      <button ion-button icon-left outline item-end (click)="openGoogleMaps(marker.position,marker.name)">
+        <ion-icon name="navigate"></ion-icon>
+        Llévame
+      </button>
+    </ion-item>
+  
+  </ion-card>
 </ion-content>

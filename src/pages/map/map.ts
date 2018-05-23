@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, PopoverController, Events,ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, PopoverController, Events, ToastController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, Marker, MarkerCluster } from "@ionic-native/google-maps";
-import { Geolocation } from "@ionic-native/geolocation";
+import { Geolocation, Geoposition } from "@ionic-native/geolocation";
 import { PopoverPage } from "../popover/popover";
 import { FuelstationModel } from "../../models/fuelstation-model";
 import { MapServiceProvider } from "../../providers/map-service/map-service";
 import { PreferencesServiceProvider } from '../../providers/preferences-service/preferences-service';
 import { FuelstationsPage } from '../fuelstations/fuelstations';
-
+import { Observable } from 'rxjs/Observable';
 /**
  * Generated class for the MapPage page.
  *
@@ -23,22 +23,23 @@ import { FuelstationsPage } from '../fuelstations/fuelstations';
 })
 export class MapPage {
 
+
   public map: GoogleMap;
-  public watch: any;
+  public watch: Observable<Geoposition>;
   public myTarget: Marker;
   public fuelStations: FuelstationModel[];
   public markerCluster: MarkerCluster;
-  public markers:Marker[];
+  public markers: Marker[];
 
-  public firstLoad:boolean = true;
+  public firstLoad: boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, public googleMaps: GoogleMaps,
     private platform: Platform, private geolocation: Geolocation, private popoverController: PopoverController,
     public mapService: MapServiceProvider, private preferenceService: PreferencesServiceProvider,
-    private events: Events, private toastCtrl:ToastController) {
+    private events: Events, private toastCtrl: ToastController) {
 
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     (!this.firstLoad) ? this.map.setDiv('map') : this.firstLoad = false;
   }
 
@@ -78,9 +79,10 @@ export class MapPage {
   }
 
   ionViewWillLeave() {
-    //No necesario ya que al quitar el elemento HTML se destruye el mapa.
-    //this.watch.unsubscribe();
-
+    if (this.watch){
+      console.log("Exists this.watch");
+      this.watch.unsubscribe();
+    }
     this.map.setDiv(null);
   }
   presentPopover(myEvent) {
@@ -113,12 +115,12 @@ export class MapPage {
               label: { color: "white" }
             },
             {
-              min: 10, max:100,
+              min: 10, max: 100,
               url: "assets/imgs/markerCluster/m2.png",
               label: { color: "white" }
             },
             {
-              min: 101, 
+              min: 101,
               url: "assets/imgs/markerCluster/m3.png",
               label: { color: "white" }
             }
@@ -126,10 +128,10 @@ export class MapPage {
         });
         this.markerCluster.on(GoogleMapsEvent.MARKER_CLICK).subscribe((params) => {
           let marker: Marker = params[1];
-          marker.setTitle(marker.get("name")+" "+marker.get('price')+"€");
+          marker.setTitle(marker.get("name") + " " + marker.get('price') + "€");
           marker.setSnippet(marker.get("schedule"));
           marker.showInfoWindow();
-          marker.addListenerOnce(GoogleMapsEvent.INFO_CLICK).then(()=>{
+          marker.addListenerOnce(GoogleMapsEvent.INFO_CLICK).then(() => {
             console.log(this.map.getVisibleRegion());
           })
         });
@@ -137,15 +139,16 @@ export class MapPage {
     });
   }
 
-  showVisibleFuelStations(){
-    let markersAux:Marker[] = [];
-    this.markers.forEach((marker:any)=>{
+  showVisibleFuelStations() {
+    let markersAux: Marker[] = [];
+    this.markers.forEach((marker: any) => {
       (this.map.getVisibleRegion().contains(marker.position)) && markersAux.push(marker);
     });
-    (markersAux.length === 0) ? this.showToast("No hay gasolineras visibles en esta zona del mapa...") : this.goToFuelStationsPage(markersAux);
+    (markersAux.length === 0) ? this.showToast("No hay gasolineras visibles en esta zona del mapa...") :
+      (markersAux.length > 100) ? this.showToast('Hay demasiados elementos visibles en esta zona...') : this.goToFuelStationsPage(markersAux);
   }
 
-  showToast(message){
+  showToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
       duration: 3000,
@@ -155,7 +158,9 @@ export class MapPage {
     toast.present();
   }
 
-  goToFuelStationsPage(markersAux:Marker[]){
-    this.navCtrl.push(FuelstationsPage,{markersAux});
+  goToFuelStationsPage(markersAux: Marker[]) {
+    this.map.getMyLocation({enableHighAccuracy:true}).then((value)=>{
+      this.navCtrl.push(FuelstationsPage, { markersAux,myLocation:value });
+    })
   }
 }

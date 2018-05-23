@@ -10,4 +10,4 @@ import { FuelstationsPage } from './fuelstations';
     IonicPageModule.forChild(FuelstationsPage),
   ],
 })
-export class FuelstationsPageModule {}
+export class FuelstationsPageModule { }

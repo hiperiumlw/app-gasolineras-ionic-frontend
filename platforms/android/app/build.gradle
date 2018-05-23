@@ -264,6 +264,7 @@ dependencies {
     compile "com.google.android.gms:play-services-maps:15.0.1"
     compile "com.google.android.gms:play-services-location:15.0.1"
     compile "com.android.support:support-core-utils:26.1.0"
+    compile "com.squareup.okhttp3:okhttp:3+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

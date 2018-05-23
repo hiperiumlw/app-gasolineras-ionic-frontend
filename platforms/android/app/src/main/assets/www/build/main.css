@@ -25697,6 +25697,11 @@ ion-navbar.toolbar {
   color: white;
 }
 
+page-fuelstationmap #map {
+  width: 150px;
+  height: 150px;
+}
+
 page-login ion-content img {
   margin-top: 16px;
 }

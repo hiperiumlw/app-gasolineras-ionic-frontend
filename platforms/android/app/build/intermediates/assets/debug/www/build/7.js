@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 296:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminpanelPageModule", function() { return AdminpanelPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FuelstationdetailsPageModule", function() { return FuelstationdetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adminpanel__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminpanelPageModule = /** @class */ (function () {
-    function AdminpanelPageModule() {
+var FuelstationdetailsPageModule = /** @class */ (function () {
+    function FuelstationdetailsPageModule() {
     }
-    AdminpanelPageModule = __decorate([
+    FuelstationdetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__adminpanel__["a" /* AdminpanelPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__["a" /* FuelstationdetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adminpanel__["a" /* AdminpanelPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__["a" /* FuelstationdetailsPage */]),
             ],
         })
-    ], AdminpanelPageModule);
-    return AdminpanelPageModule;
+    ], FuelstationdetailsPageModule);
+    return FuelstationdetailsPageModule;
 }());
 
-//# sourceMappingURL=adminpanel.module.js.map
+//# sourceMappingURL=fuelstationdetails.module.js.map
 
 /***/ })
 

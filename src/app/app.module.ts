@@ -22,7 +22,6 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
 import { Facebook } from '@ionic-native/facebook';
 import { FuelstationsPage } from '../pages/fuelstations/fuelstations';
 import { FuelstationdetailsPage } from '../pages/fuelstationdetails/fuelstationdetails';
-import { FuelstationmapPage } from '../pages/fuelstationmap/fuelstationmap';
 
 
 @NgModule({
@@ -37,7 +36,6 @@ import { FuelstationmapPage } from '../pages/fuelstationmap/fuelstationmap';
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
-    FuelstationmapPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +55,6 @@ import { FuelstationmapPage } from '../pages/fuelstationmap/fuelstationmap';
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
-    FuelstationmapPage
   ],
   providers: [
     StatusBar,

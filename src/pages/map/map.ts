@@ -7,7 +7,6 @@ import { FuelstationModel } from "../../models/fuelstation-model";
 import { MapServiceProvider } from "../../providers/map-service/map-service";
 import { PreferencesServiceProvider } from '../../providers/preferences-service/preferences-service';
 import { FuelstationsPage } from '../fuelstations/fuelstations';
-import { Observable } from 'rxjs/Observable';
 /**
  * Generated class for the MapPage page.
  *
@@ -25,7 +24,7 @@ export class MapPage {
 
 
   public map: GoogleMap;
-  public watch: Observable<Geoposition>;
+  public watch: any;
   public myTarget: Marker;
   public fuelStations: FuelstationModel[];
   public markerCluster: MarkerCluster;
@@ -59,8 +58,8 @@ export class MapPage {
           this.map.animateCamera({ target: miPosicion, zoom: 17 });
         });
 
-        this.watch = this.geolocation.watchPosition({ enableHighAccuracy: true });
-        this.watch.subscribe((data) => {
+        this.watch = this.geolocation.watchPosition({ enableHighAccuracy: true })
+        .subscribe((data) => {
           let miPosicion = new LatLng(data.coords.latitude, data.coords.longitude);
           console.log("Entro en subscribe")
           if (this.myTarget != null) {

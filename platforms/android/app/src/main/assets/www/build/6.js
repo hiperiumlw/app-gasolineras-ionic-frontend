@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 308:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FuelstationmapPageModule", function() { return FuelstationmapPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FuelstationdetailsPageModule", function() { return FuelstationdetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fuelstationmap__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FuelstationmapPageModule = /** @class */ (function () {
-    function FuelstationmapPageModule() {
+var FuelstationdetailsPageModule = /** @class */ (function () {
+    function FuelstationdetailsPageModule() {
     }
-    FuelstationmapPageModule = __decorate([
+    FuelstationdetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fuelstationmap__["a" /* FuelstationmapPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__["a" /* FuelstationdetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fuelstationmap__["a" /* FuelstationmapPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fuelstationdetails__["a" /* FuelstationdetailsPage */]),
             ],
         })
-    ], FuelstationmapPageModule);
-    return FuelstationmapPageModule;
+    ], FuelstationdetailsPageModule);
+    return FuelstationdetailsPageModule;
 }());
 
-//# sourceMappingURL=fuelstationmap.module.js.map
+//# sourceMappingURL=fuelstationdetails.module.js.map
 
 /***/ })
 

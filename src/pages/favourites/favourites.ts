@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { FavouritesServiceProvider } from '../../providers/favourites-service/favourites-service';
 /**
  * Generated class for the FavouritesPage page.
  *
@@ -15,7 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FavouritesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public favourites:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private favouritesServices:FavouritesServiceProvider) {
+  
+  }
+
+  ionViewWillEnter(){
+    this.favouritesServices.getFavourites().then((value)=>{
+
+    })
   }
 
   ionViewDidLoad() {

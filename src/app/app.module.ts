@@ -22,7 +22,9 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
 import { Facebook } from '@ionic-native/facebook';
 import { FuelstationsPage } from '../pages/fuelstations/fuelstations';
 import { FuelstationdetailsPage } from '../pages/fuelstationdetails/fuelstationdetails';
-
+import { AddreviewPage } from '../pages/addreview/addreview';
+import { ReviewServiceProvider } from '../providers/review-service/review-service';
+import { FavouritesServiceProvider } from '../providers/favourites-service/favourites-service';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { FuelstationdetailsPage } from '../pages/fuelstationdetails/fuelstationd
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
+    AddreviewPage
   ],
   imports: [
     BrowserModule,
@@ -55,15 +58,18 @@ import { FuelstationdetailsPage } from '../pages/fuelstationdetails/fuelstationd
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
+    AddreviewPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     MapServiceProvider,
     PreferencesServiceProvider,
     AuthenticationServiceProvider,
-    Facebook
+    Facebook,
+    ReviewServiceProvider,
+    FavouritesServiceProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

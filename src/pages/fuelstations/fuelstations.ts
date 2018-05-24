@@ -46,7 +46,7 @@ export class FuelstationsPage {
   }
 
   goToDetails(marker:any){
-    this.navCtrl.push(FuelstationdetailsPage,{marker});
+    this.navCtrl.push(FuelstationdetailsPage,{marker:marker,myLocation:this.myLocation});
   }
 
   openGoogleMaps(position:any,name:string) {

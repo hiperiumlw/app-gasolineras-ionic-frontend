@@ -8,6 +8,15 @@
 
   <ion-navbar color="danger">
     <ion-title>FuelStationDetails App v1.0</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openGoogleMaps()">
+        <ion-icon name="navigate"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="saveToFavourites()">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,28 +24,45 @@
 
 <ion-content>
   <ion-card>
-      <div id="map_canvas"></div>
-      <ion-item>
-          <ion-icon name="pin" item-start large color="danger"></ion-icon>
-          <h2>{{marker.name}}</h2>
-          <p>{{marker.schedule}}</p>
-        </ion-item>
-    
-      <ion-item>
-        <ion-icon name="information" item-left large color="danger"></ion-icon>
-        <h2>{{preference.title}}</h2>
-        <p>Llenando tu depósito en esta gasolinera ahorras 7,20€ con respecto a la gasolinera más cara 
-          visible en el mapa.
-        </p>
+    <div id="map_canvas"></div>
+    <ion-item>
+      <ion-icon name="pin" item-start large color="danger"></ion-icon>
+      <h2>{{marker.name}}</h2>
+      <p>{{marker.schedule}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="information" item-left large color="danger"></ion-icon>
+      <h2 *ngIf="preference">{{preference.title}}</h2>
+      <p>Llenando tu depósito en esta gasolinera ahorras 7,20€ con respecto a la gasolinera más cara visible en el mapa.
+      </p>
+    </ion-item>
+
+    <ion-item>
+      <span item-left>{{marker.distance}}</span>
+      <span item-left>{{marker.price}}€/L</span>
+      <button ion-button icon-left clear item-end (click)="openAddReviewModal()">
+        <ion-icon name="happy"></ion-icon>
+        Añadir Review
+      </button>
+    </ion-item>
+
+    <ion-card-content *ngIf="!anyReviews">
+      <span>No hay ningúna review para esta gasolinera!</span>
+    </ion-card-content>
+
+    <ion-list *ngIf="anyReviews">
+      <ion-list-header>Reviews</ion-list-header>
+      <ion-item *ngFor="let review of reviews">
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/logo.png">
+        </ion-avatar>
+        <div style="display: inline-flex">
+          <ion-icon name="star" *ngFor="let p of ' '.repeat(review.Puntuacion).split('')"></ion-icon>
+        </div>
+        <p>{{review.Comentario}}</p>
+        <ion-note item-end>3:43 pm</ion-note>
       </ion-item>
-    
-      <ion-item>
-        <span item-left>{{marker.distance}}</span>
-        <span item-left>{{marker.price}}€/L</span>
-        <button ion-button icon-left clear item-end>
-          <ion-icon name="navigate"></ion-icon>
-          Start
-        </button>
-      </ion-item>
-    </ion-card>
+    </ion-list>
+  </ion-card>
 </ion-content>

@@ -27989,11 +27989,24 @@ ion-navbar.toolbar {
 .welcomeUser {
   margin-left: 1em;
   color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-page-fuelstationdetails #map_canvas {
+page-fuelstationdetails {
+  /*#map_canvas{
+        height:40vh;
+        width: 100%;
+        background-color: white;
+    }*/
+}
+
+page-fuelstationdetails img {
   height: 40vh;
   width: 100%;
+  background-color: white;
 }
 
 page-login ion-content img {

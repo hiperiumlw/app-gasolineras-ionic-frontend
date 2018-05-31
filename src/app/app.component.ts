@@ -11,6 +11,7 @@ import { PreferencesServiceProvider } from '../providers/preferences-service/pre
 import { AdminpanelPage } from "../pages/adminpanel/adminpanel";
 import { UserModel } from '../models/user-model';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+import { ProfilePage } from '../pages/profile/profile';
 @Component({
   templateUrl: 'app.html'
 })
@@ -23,6 +24,7 @@ export class MyApp {
   login: any;
   logout: any;
   adminpanel: any;
+  profile: any;
 
   user: UserModel;
 
@@ -42,7 +44,8 @@ export class MyApp {
 
     this.login = { title: 'Iniciar Sesión', component: LoginPage, icon: 'person' };
     this.logout = { title: 'Cerrar Sesión', icon: 'log-out' };
-    this.adminpanel = { title: 'Admin Panel', component: AdminpanelPage, icon: 'open' }
+    this.adminpanel = { title: 'Admin Panel', component: AdminpanelPage, icon: 'open' },
+    this.profile = { title: 'Profile', component: ProfilePage, icon: 'person' }
   }
 
   initializeApp() {
@@ -71,7 +74,7 @@ export class MyApp {
       this.showLoading(message);
     });
 
-    this.events.subscribe('app:hideLoading',()=>{
+    this.events.subscribe('app:hideLoading', () => {
       this.hideLoading();
     })
   }

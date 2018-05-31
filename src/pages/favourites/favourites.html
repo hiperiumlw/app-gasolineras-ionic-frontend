@@ -8,15 +8,35 @@
       Favoritos App v1.0
     </ion-title>
 
-    <ion-buttons end>
-      <!--<button ion-button icon-only (click)="openModal()">-->
-        <!--<ion-icon name="refresh"></ion-icon>-->
-      <!--</button>-->
+    <ion-buttons end *ngIf="(favouritesServices.favourites).length > 0">
+      <button ion-button icon-only (click)="deleteAll()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-item padding text-center *ngIf="(favouritesServices.favourites).length === 0"><p>No tiene ningúna gasolinera en favoritos!</p></ion-item>
+  <ion-card *ngFor="let fuelstation of favouritesServices.favourites">
+    <ion-item>
+      <ion-icon name="pin" item-start large color="danger"></ion-icon>
+      <h2>{{fuelstation.name}}</h2>
+      <p>{{fuelstation.schedule}}</p>
+    </ion-item>
 
+    <ion-item>
+      <span item-left>{{fuelstation.distance}}</span>
+      <span item-left>{{fuelstation.price}}€/L</span>
+      <button ion-button icon-left outline item-end color="details" (click)="deleteFavourite(fuelstation)">
+        <ion-icon name="trash"></ion-icon>
+        Eliminar
+      </button>
+      <button ion-button icon-left outline item-end (click)="openGoogleMaps(fuelstation.position,fuelstation.name)">
+        <ion-icon name="navigate"></ion-icon>
+        Llévame
+      </button>
+    </ion-item>
+  </ion-card>
 </ion-content>

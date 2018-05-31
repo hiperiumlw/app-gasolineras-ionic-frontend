@@ -97,9 +97,14 @@
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="26.1.0" />
     </plugin>
-    <engine name="android" spec="7.0.0" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.2.0" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
+    <allow-navigation href="http://192.168.5.27:8100" />
+    <allow-navigation href="http://192.168.0.104:8100" />
+    <allow-navigation href="http://192.168.1.114:8100" />
+    <engine name="android" spec="7.0.0" />
+    <allow-navigation href="http://192.168.1.189:8100" />
+    <allow-navigation href="http://192.168.0.103:8100" />
 </widget>

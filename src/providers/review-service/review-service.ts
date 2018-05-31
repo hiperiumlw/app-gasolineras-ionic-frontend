@@ -12,10 +12,10 @@ import { Events } from 'ionic-angular';
 export class ReviewServiceProvider {
 
   private URIS: URIS;
-
+  
   constructor(public http: HttpClient, private events: Events) {
     console.log('Hello ReviewServiceProvider Provider');
-    this.URIS = new URIS('https://192.168.0.102:3000');
+    this.URIS = new URIS('https://192.168.0.103:3000');
   }
 
   addReview(data: any) {
@@ -45,5 +45,28 @@ export class ReviewServiceProvider {
     })
   }
 
+  getPendingReviews(){
+    return new Promise(resolve => {
+      this.http.get(this.URIS.GET_PENDING_REVIEWS)
+        .subscribe((data) => {
+          //this.pendingReviews = data;
+          resolve(data);
+        }, (err) => {
+          console.log(err);
+        })
+    })
+  }
 
+  validateAll(data:any){
+    return new Promise(resolve => {
+      this.http.post(this.URIS.VALIDATE_ALL_REVIEWS,data)
+        .subscribe((data:any) => {
+          this.events.publish('app:toast',data.message);
+          //this.pendingReviews = [];
+          resolve();
+        }, (err) => {
+          console.log(err);
+        })
+    })
+  }
 }

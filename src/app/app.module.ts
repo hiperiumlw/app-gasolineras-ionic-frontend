@@ -25,6 +25,7 @@ import { FuelstationdetailsPage } from '../pages/fuelstationdetails/fuelstationd
 import { AddreviewPage } from '../pages/addreview/addreview';
 import { ReviewServiceProvider } from '../providers/review-service/review-service';
 import { FavouritesServiceProvider } from '../providers/favourites-service/favourites-service';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FavouritesServiceProvider } from '../providers/favourites-service/favou
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
-    AddreviewPage
+    AddreviewPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { FavouritesServiceProvider } from '../providers/favourites-service/favou
     AdminpanelPage,
     FuelstationsPage,
     FuelstationdetailsPage,
-    AddreviewPage
+    AddreviewPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

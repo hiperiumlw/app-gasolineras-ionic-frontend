@@ -85,7 +85,7 @@
     <name>MyApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.103:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -94,6 +94,11 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="http://192.168.1.42:8100" />
+    <allow-navigation href="http://192.168.5.27:8100" />
+    <allow-navigation href="http://192.168.0.104:8100" />
+    <allow-navigation href="http://192.168.1.114:8100" />
+    <allow-navigation href="http://192.168.1.189:8100" />
+    <allow-navigation href="http://192.168.0.103:8100" />
     <config-file parent="/resources" target="./res/values/strings.xml">
         <string name="fb_app_id">2107678939508903</string>
         <string name="fb_app_name">APPGasolineras</string>

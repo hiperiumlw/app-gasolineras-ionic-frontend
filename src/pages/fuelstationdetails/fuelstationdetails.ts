@@ -27,15 +27,16 @@ export class FuelstationdetailsPage {
   public reviews: any;
   public anyReviews: boolean = true;
   public myLocation: any;
-
+  public mapStaticUri:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform
-    , private googleMaps: GoogleMaps, private preferenceService: PreferencesServiceProvider,
+    , private preferenceService: PreferencesServiceProvider,
     public modalCtrl: ModalController, private reviewService: ReviewServiceProvider,
     private authService:AuthenticationServiceProvider, private events: Events,private launchNavigator: LaunchNavigator
     ,private favouritesServices:FavouritesServiceProvider,public alerCtrl: AlertController) {
     this.marker = navParams.get('marker');
     this.myLocation = navParams.get('myLocation');
-    console.log(this.marker);
+    this.mapStaticUri = "https://maps.googleapis.com/maps/api/staticmap?center="+this.marker.position.lat+","+this.marker.position.lng+"&zoom=18&format=png32&size=640x440&scale=2&maptype=roadmap&markers="+this.marker.position.lat+","+this.marker.position.lng+"&key=AIzaSyAIP-OlRlF_iX-fRfSvutjhlgLI9Ylr92g";
+      console.log(this.mapStaticUri);
   }
 
   ionViewWillEnter() {
@@ -52,7 +53,7 @@ export class FuelstationdetailsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuelstationdetailsPage');
     this.platform.ready().then(() => {
-      this.map = this.googleMaps.create('map_canvas', {
+      /*this.map = GoogleMaps.create('map_canvas', {
         controls: {
           'compass': true,
           'indoorPicker': true,
@@ -70,7 +71,7 @@ export class FuelstationdetailsPage {
         this.map.moveCamera({ target: this.marker.position, zoom: 17 }).then(() => {
           this.map.addMarker({ position: this.marker.position });
         })
-      })
+      })*/
     })
   }
 

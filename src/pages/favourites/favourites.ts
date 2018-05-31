@@ -15,20 +15,26 @@ import { FavouritesServiceProvider } from '../../providers/favourites-service/fa
 })
 export class FavouritesPage {
 
-  public favourites:any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,private favouritesServices:FavouritesServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public favouritesServices:FavouritesServiceProvider) {
   
   }
 
   ionViewWillEnter(){
     this.favouritesServices.getFavourites().then((value)=>{
-
+        console.log(value);
     })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavouritesPage');
+  }
+
+  deleteFavourite(fuelstation:any){
+    this.favouritesServices.deleteFromLocal(fuelstation);
+  }
+
+  deleteAll(){
+    this.favouritesServices.deleteAll();
   }
 
 }

@@ -7,6 +7,7 @@ import { FuelstationModel } from "../../models/fuelstation-model";
 import { MapServiceProvider } from "../../providers/map-service/map-service";
 import { PreferencesServiceProvider } from '../../providers/preferences-service/preferences-service';
 import { FuelstationsPage } from '../fuelstations/fuelstations';
+import { FuelstationdetailsPage } from '../fuelstationdetails/fuelstationdetails';
 /**
  * Generated class for the MapPage page.
  *
@@ -53,13 +54,14 @@ export class MapPage {
       });
       this.map.one(GoogleMapsEvent.MAP_READY).then((data: any) => {
         //Centrar el mapa dependiendo de nuestra localización
-        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
+        /*this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
           let miPosicion = new LatLng(pos.coords.latitude, pos.coords.longitude);
           this.map.animateCamera({ target: miPosicion, zoom: 17 });
         });
 
         this.watch = this.geolocation.watchPosition({ enableHighAccuracy: true })
         .subscribe((data) => {
+          console.log(data);
           let miPosicion = new LatLng(data.coords.latitude, data.coords.longitude);
           console.log("Entro en subscribe")
           if (this.myTarget != null) {
@@ -68,7 +70,7 @@ export class MapPage {
           } else {
             this.map.addMarker({ icon: 'assets/imgs/customMarker.jpg', position: miPosicion }).then((marker) => { this.myTarget = marker });
           }
-        })
+        })*/
       }).catch((err) => {
         console.log("Error -> " + err);
       })
@@ -93,10 +95,10 @@ export class MapPage {
 
   centerCamera() {
     //Centrar el mapa dependiendo de nuestra localización
-    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
+    /*this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((pos) => {
       let miPosicion = new LatLng(pos.coords.latitude, pos.coords.longitude);
       this.map.animateCamera({ target: miPosicion, zoom: 17 });
-    })
+    })*/
   }
 
   addFuelStationsToMap() {
@@ -130,8 +132,17 @@ export class MapPage {
           marker.setTitle(marker.get("name") + " " + marker.get('price') + "€");
           marker.setSnippet(marker.get("schedule"));
           marker.showInfoWindow();
-          marker.addListenerOnce(GoogleMapsEvent.INFO_CLICK).then(() => {
-            console.log(this.map.getVisibleRegion());
+          marker.on(GoogleMapsEvent.INFO_CLICK).subscribe(() => {
+            let markerAux = {
+              position:marker.get("position"),
+              name:marker.get("name"),
+              schedule:marker.get("schedule"),
+              price:marker.get("price"),
+              address:marker.get("address")
+            }
+            this.map.getMyLocation({enableHighAccuracy:true}).then((value)=>{
+              this.navCtrl.push(FuelstationdetailsPage,{marker:markerAux,myLocation:value});
+            })
           })
         });
       });

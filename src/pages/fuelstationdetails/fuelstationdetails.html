@@ -25,6 +25,7 @@
 <ion-content>
   <ion-card>
     <div id="map_canvas"></div>
+    <img src="{{mapStaticUri}}"/>
     <ion-item>
       <ion-icon name="pin" item-start large color="danger"></ion-icon>
       <h2>{{marker.name}}</h2>
@@ -32,7 +33,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-icon name="information" item-left large color="danger"></ion-icon>
+      <ion-icon name="information-circle" item-left large color="danger"></ion-icon>
       <h2 *ngIf="preference">{{preference.title}}</h2>
       <p>Llenando tu depósito en esta gasolinera ahorras 7,20€ con respecto a la gasolinera más cara visible en el mapa.
       </p>
@@ -55,7 +56,7 @@
       <ion-list-header>Reviews</ion-list-header>
       <ion-item *ngFor="let review of reviews">
         <ion-avatar item-start>
-          <img src="../../assets/imgs/logo.png">
+          <img src="assets/imgs/logo.png">
         </ion-avatar>
         <div style="display: inline-flex">
           <ion-icon name="star" *ngFor="let p of ' '.repeat(review.Puntuacion).split('')"></ion-icon>

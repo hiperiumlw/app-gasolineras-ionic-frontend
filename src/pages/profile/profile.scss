@@ -1,0 +1,11 @@
+page-profile {
+    .profile-header{
+        height: 40%;
+        background-color: color($colors,danger);
+        ion-avatar img{
+            width: 7em !important;
+            height: 7em !important;
+            border-radius: 50% !important;
+        }
+    }
+}

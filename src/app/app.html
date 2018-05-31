@@ -1,8 +1,14 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="danger">
-      <ion-title>Gasolineras Baratas</ion-title>
-      <div *ngIf="user" class="welcomeUser">Bienvenido , {{user.name}}</div>
+      <ion-title *ngIf="!user">Gasolineras Baratas</ion-title>
+      <ion-item *ngIf="user" color="danger">
+          <ion-avatar item-start>
+            <img src="assets/imgs/logo.png">
+          </ion-avatar>
+          <h2>{{user.name}}</h2>
+          <p>{{user.email}}</p>
+        </ion-item>
     </ion-toolbar>
   </ion-header>
 
@@ -13,6 +19,12 @@
       </button>
       <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">
         <ion-icon [name]="login.icon"></ion-icon> {{login.title}}
+      </button>
+      <button *ngIf="user && user.isAdmin" class="lista-menu" menuClose ion-item (click)="openPage(adminpanel)">
+        <ion-icon [name]="adminpanel.icon"></ion-icon> {{adminpanel.title}}
+      </button>
+      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="openPage(profile)">
+        <ion-icon [name]="profile.icon"></ion-icon> {{profile.title}}
       </button>
       <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logoutUser()">
         <ion-icon [name]="logout.icon"></ion-icon> {{logout.title}}

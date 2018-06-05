@@ -25,8 +25,8 @@
   <ion-item padding text-center *ngIf="(favourites).length === 0">
     <p>No tiene ningúna gasolinera en favoritos!</p>
   </ion-item>
-  <ion-card *ngFor="let fuelstation of favourites">
-    <ion-item>
+  <ion-card *ngFor="let fuelstation of favourites" >
+    <ion-item (click)="goToDetails(fuelstation)">
       <ion-icon name="pin" item-start large color="danger"></ion-icon>
       <h2>{{fuelstation.name}}</h2>
       <p>{{fuelstation.schedule}}</p>

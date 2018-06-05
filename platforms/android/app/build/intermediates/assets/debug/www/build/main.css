@@ -27995,6 +27995,10 @@ ion-navbar.toolbar {
   display: flex;
 }
 
+.alertCustomClass button {
+  color: #CC4125 !important;
+}
+
 page-fuelstationdetails {
   /*#map_canvas{
         height:40vh;

@@ -68,6 +68,16 @@ export class FavouritesServiceProvider {
         resolve(value);
       })
     })
+  };
+
+  getFavouritesFromServer(){
+    return new Promise((resolve)=>{
+      this.http.get(this.URIS.GET_REVIEWS_BY_USER).subscribe((data)=>{
+        
+      },(error)=>{
+        console.log(error);
+      })
+    });
   }
 
   deleteAll() {

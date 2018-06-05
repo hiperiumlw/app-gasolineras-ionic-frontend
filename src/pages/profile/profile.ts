@@ -24,9 +24,9 @@ export class ProfilePage {
   }
 
   ionViewWillEnter(){
-    this.authService.checkIfUserisLogged().then((data:any)=>{
-      if (data){
-        this.reviewService.getReviewsByUser(data.email).then((result)=>{
+    this.authService.checkIfUserisLogged().then((user:any)=>{
+      if (user){
+        this.reviewService.getReviewsByUser(user.email).then((result)=>{
             this.reviews = result;
         });
         this.favouritesService.getFavourites().then((data)=>{

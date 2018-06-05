@@ -4,6 +4,7 @@ import { FavouritesServiceProvider } from '../../providers/favourites-service/fa
 import { AuthenticationServiceProvider } from '../../providers/authentication-service/authentication-service';
 import { Geolocation } from "@ionic-native/geolocation";
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { FuelstationdetailsPage } from '../fuelstationdetails/fuelstationdetails';
 /**
  * Generated class for the FavouritesPage page.
  *
@@ -108,5 +109,9 @@ export class FavouritesPage {
         );
     })
 
+  }
+
+  goToDetails(fuelstation:any){
+    this.navCtrl.push(FuelstationdetailsPage,{marker:fuelstation});
   }
 }

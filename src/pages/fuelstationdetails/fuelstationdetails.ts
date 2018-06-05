@@ -45,7 +45,7 @@ export class FuelstationdetailsPage {
       console.log(this.preference);
     });
 
-    this.reviewService.getReviews(this.marker.address).then((data: any) => {
+    this.reviewService.getReviewsByFuelStation(this.marker.address).then((data: any) => {
       (data.length === 0) ? this.anyReviews = false : this.reviews = data;
     });
   }
@@ -77,12 +77,12 @@ export class FuelstationdetailsPage {
 
   openAddReviewModal() {
     this.authService.checkIfUserisLogged().then((value)=>{
-      (value) ? this.createModal() : this.showErrorToast();
+      (value) ? this.createModal(value) : this.showErrorToast();
     })
   }
 
-  createModal(){
-    let modal = this.modalCtrl.create(AddreviewPage, { address: this.marker.address });
+  createModal(value:any){
+    let modal = this.modalCtrl.create(AddreviewPage, { address: this.marker.address,userEmail:value.email });
     modal.present();
   }
 
@@ -107,6 +107,7 @@ export class FuelstationdetailsPage {
   }
 
   saveToFavourites(){
+    this.marker.type = this.preference.title;
     this.favouritesServices.checkIfAlreadyInFavourites(this.marker).then((value)=>{
       (value) ? this.deleteFromFavourites() : this.favouritesServices.saveFavouriteLocally(this.marker);
     })

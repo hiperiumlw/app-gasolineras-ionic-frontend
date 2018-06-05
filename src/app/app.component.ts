@@ -44,8 +44,8 @@ export class MyApp {
 
     this.login = { title: 'Iniciar Sesión', component: LoginPage, icon: 'person' };
     this.logout = { title: 'Cerrar Sesión', icon: 'log-out' };
-    this.adminpanel = { title: 'Admin Panel', component: AdminpanelPage, icon: 'open' },
-    this.profile = { title: 'Profile', component: ProfilePage, icon: 'person' }
+    this.adminpanel = { title: 'Admin Panel', component: AdminpanelPage, icon: 'open' };
+    this.profile = { title: 'Profile', component: ProfilePage, icon: 'person' };
   }
 
   initializeApp() {
@@ -76,6 +76,10 @@ export class MyApp {
 
     this.events.subscribe('app:hideLoading', () => {
       this.hideLoading();
+    });
+
+    this.events.subscribe('app:showLoginPage',()=>{
+      this.openPage(this.login);
     })
   }
 

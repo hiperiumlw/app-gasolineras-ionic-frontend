@@ -28102,6 +28102,30 @@ page-popover .dot.selected {
   border: 1px solid #dedede;
 }
 
+page-profile .profile-header {
+  height: 40%;
+  background-color: #CC4125;
+}
+
+page-profile .profile-header ion-avatar {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+page-profile .profile-header ion-avatar img {
+  width: 10em !important;
+  height: 10em !important;
+  border-radius: 50% !important;
+  margin: auto;
+}
+
+page-profile .profile-header h3, page-profile .profile-header p {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
 page-register ion-content img {
   margin-top: 16px;
 }

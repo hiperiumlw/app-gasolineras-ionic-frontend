@@ -12,13 +12,14 @@ import { Events } from 'ionic-angular';
 export class ReviewServiceProvider {
 
   private URIS: URIS;
-  
+
   constructor(public http: HttpClient, private events: Events) {
     console.log('Hello ReviewServiceProvider Provider');
-    this.URIS = new URIS('https://192.168.0.103:3000');
+    this.URIS = new URIS('https://192.168.1.99:3000');
   }
 
   addReview(data: any) {
+    console.log(data);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application-json');
     return new Promise((resolve) => {
@@ -33,10 +34,10 @@ export class ReviewServiceProvider {
     })
   }
 
-  getReviews(value: any) {
+  getReviewsByFuelStation(value: any) {
     return new Promise(resolve => {
       value = encodeURIComponent(value);
-      this.http.get(this.URIS.GET_REVIEWS + value + '')
+      this.http.get(this.URIS.GET_REVIEWS_BY_FUELSTATION + value + '')
         .subscribe((data) => {
           resolve(data);
         }, (err) => {
@@ -45,7 +46,20 @@ export class ReviewServiceProvider {
     })
   }
 
-  getPendingReviews(){
+  getReviewsByUser(value: any) {
+    return new Promise((resolve) => {
+      value = encodeURIComponent(value);
+      this.http.get(this.URIS.GET_REVIEWS_BY_USER + value)
+        .subscribe((data)=>{
+          resolve(data);
+        },(error)=>{
+          console.log(error);
+        })
+        
+    })
+  }
+
+  getPendingReviews() {
     return new Promise(resolve => {
       this.http.get(this.URIS.GET_PENDING_REVIEWS)
         .subscribe((data) => {
@@ -57,11 +71,11 @@ export class ReviewServiceProvider {
     })
   }
 
-  validateAll(data:any){
+  validateAll(data: any) {
     return new Promise(resolve => {
-      this.http.post(this.URIS.VALIDATE_ALL_REVIEWS,data)
-        .subscribe((data:any) => {
-          this.events.publish('app:toast',data.message);
+      this.http.post(this.URIS.VALIDATE_ALL_REVIEWS, data)
+        .subscribe((data: any) => {
+          this.events.publish('app:toast', data.message);
           //this.pendingReviews = [];
           resolve();
         }, (err) => {

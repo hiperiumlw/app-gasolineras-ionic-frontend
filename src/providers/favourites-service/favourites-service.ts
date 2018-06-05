@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
+import { URIS } from '../../models/uris-model';
 /*
   Generated class for the FavouritesServiceProvider provider.
 
@@ -12,9 +13,10 @@ import { Events } from 'ionic-angular';
 export class FavouritesServiceProvider {
 
   public favourites: any = [];
-
+  public URIS: URIS;
   constructor(public http: HttpClient, private storage: Storage, private events: Events) {
     console.log('Hello FavouritesServiceProvider Provider');
+    this.URIS = new URIS('https://192.168.1.99:3000');
   }
 
   checkIfAlreadyInFavourites(marker: any) {
@@ -39,6 +41,16 @@ export class FavouritesServiceProvider {
         this.events.publish('app:toast', 'Se ha añadido la gasolinera a favoritos correctamente!');
       })
     })
+  };
+
+  saveFavouriteToServer(favouritesAux: any) {
+    return new Promise ((resolve)=>{
+        this.http.post(this.URIS.SAVE_FAVOURITE_TO_SERVER,favouritesAux).subscribe((data)=>{
+          resolve(data);
+        },(error)=>{
+          this.events.publish('app:toast', error.error.message);
+        })
+    });
   }
 
   deleteFromLocal(marker: any) {
@@ -53,7 +65,6 @@ export class FavouritesServiceProvider {
   getFavourites() {
     return new Promise((resolve) => {
       this.storage.get('favourites-fuelstations').then((value) => {
-        this.favourites = value;
         resolve(value);
       })
     })
@@ -63,7 +74,6 @@ export class FavouritesServiceProvider {
     return new Promise((resolve) => {
       this.storage.remove('favourites-fuelstations').then(() => {
         this.events.publish('app:toast', 'Se han eliminado todos los favoritos!');
-        this.favourites = [];
         resolve();
       })
     })

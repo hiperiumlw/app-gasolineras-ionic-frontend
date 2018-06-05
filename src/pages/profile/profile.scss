@@ -2,10 +2,19 @@ page-profile {
     .profile-header{
         height: 40%;
         background-color: color($colors,danger);
+        ion-avatar{
+            align-content: center;
+        }
         ion-avatar img{
-            width: 7em !important;
-            height: 7em !important;
+            width: 10em !important;
+            height: 10em !important;
             border-radius: 50% !important;
+            margin: auto;
+        }
+        h3,p{
+            text-align: center;
+            color: white;
+            margin: 0;
         }
     }
 }

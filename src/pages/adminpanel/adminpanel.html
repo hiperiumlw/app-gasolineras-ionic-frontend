@@ -25,18 +25,20 @@
 
 
 <ion-content padding>
-    <ion-item padding text-center *ngIf="(pendingReviews).length === 0"><p>No tiene ningúna review pendiente por validar!</p></ion-item>
-    <ion-list *ngIf="(pendingReviews).length > 0">
-        <ion-list-header>Reviews</ion-list-header>
-        <ion-item *ngFor="let review of pendingReviews">
-          <ion-avatar item-start>
-            <img src="../../assets/imgs/logo.png">
-          </ion-avatar>
-          <div style="display: inline-flex">
-            <ion-icon name="star" *ngFor="let p of ' '.repeat(review.Puntuacion).split('')"></ion-icon>
-          </div>
-          <p>{{review.Comentario}}</p>
-          <ion-note item-end>3:43 pm</ion-note>
-        </ion-item>
-      </ion-list>
+  <ion-item padding text-center *ngIf="(pendingReviews).length === 0">
+    <p>No tiene ningúna review pendiente por validar!</p>
+  </ion-item>
+  <ion-list *ngIf="(pendingReviews).length > 0">
+    <ion-list-header>Reviews</ion-list-header>
+    <ion-item *ngFor="let review of pendingReviews">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/logo.png">
+      </ion-avatar>
+      <div style="display: inline-flex">
+        <ion-icon name="star" *ngFor="let p of ' '.repeat(review.Puntuacion).split('')"></ion-icon>
+      </div>
+      <p>{{review.Comentario}}</p>
+      <ion-note item-end>3:43 pm</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

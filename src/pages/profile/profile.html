@@ -27,76 +27,68 @@
       <ion-avatar>
         <img src="assets/imgs/logo.png">
       </ion-avatar>
+      <h3>Usuario</h3>
+      <p>@email</p>
     </ion-col>
   </ion-row>
-  <ion-segment [(ngModel)]="pet">
-    <ion-segment-button value="puppies">
-      Puppies
+  <ion-segment [(ngModel)]="option" color="danger">
+    <ion-segment-button value="reviews">
+      Reviews
     </ion-segment-button>
-    <ion-segment-button value="kittens">
-      Kittens
+    <ion-segment-button value="favourites">
+      Favoritos
     </ion-segment-button>
-    <ion-segment-button value="ducklings">
-      Ducklings
+    <ion-segment-button value="lastvisited">
+      Últimos Vistos
     </ion-segment-button>
   </ion-segment>
 
-  <div [ngSwitch]="pet">
-    <ion-list *ngSwitchCase="'puppies'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Ruby</h2>
+  <div [ngSwitch]="option">
+    <ion-list *ngSwitchCase="'reviews'">
+      <ion-item padding text-center *ngIf="(reviews).length === 0">
+        <p>No tiene ningúna review publicada!</p>
       </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-2.jpg">
-        </ion-thumbnail>
-        <h2>Oscar</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-4.jpg">
-        </ion-thumbnail>
-        <h2>Zoey</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-3.jpg">
-        </ion-thumbnail>
-        <h2>Otto</h2>
-      </ion-item>
+      <ion-list *ngIf="(reviews).length > 0">
+        <ion-item *ngFor="let review of reviews">
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/logo.png">
+          </ion-avatar>
+          <div style="display: inline-flex">
+            <ion-icon name="star" *ngFor="let p of ' '.repeat(review.Puntuacion).split('')"></ion-icon>
+          </div>
+          <p>{{review.Comentario}}</p>
+          <ion-note item-end>3:43 pm</ion-note>
+        </ion-item>
+      </ion-list>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'kittens'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Luna</h2>
+    <ion-list *ngSwitchCase="'favourites'">
+      <ion-item padding text-center *ngIf="(favourites).length === 0">
+        <p>No tiene ningúna gasolinera en favoritos!</p>
       </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-3.jpg">
-        </ion-thumbnail>
-        <h2>Milo</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-4.jpg">
-        </ion-thumbnail>
-        <h2>Bandit</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-kitten-2.jpg">
-        </ion-thumbnail>
-        <h2>Nala</h2>
-      </ion-item>
+      <ion-card *ngFor="let fuelstation of favourites">
+        <ion-item>
+          <ion-icon name="pin" item-start large color="danger"></ion-icon>
+          <h2>{{fuelstation.name}}</h2>
+          <p>{{fuelstation.schedule}}</p>
+        </ion-item>
+
+        <ion-item>
+          <span item-left>{{fuelstation.distance}}</span>
+          <span item-left>{{fuelstation.price}}€/L</span>
+          <button ion-button icon-left outline item-end color="details" (click)="deleteFavourite(fuelstation)">
+            <ion-icon name="trash"></ion-icon>
+            Eliminar
+          </button>
+          <button ion-button icon-left outline item-end (click)="openGoogleMaps(fuelstation.position,fuelstation.name)">
+            <ion-icon name="navigate"></ion-icon>
+            Llévame
+          </button>
+        </ion-item>
+      </ion-card>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'ducklings'">
+    <ion-list *ngSwitchCase="'lastvisited'">
       <ion-item>
         <ion-thumbnail item-start>
           <img src="assets/img/thumbnail-duckling-1.jpg">

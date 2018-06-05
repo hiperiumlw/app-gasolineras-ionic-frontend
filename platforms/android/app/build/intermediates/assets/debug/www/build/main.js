@@ -1,13 +1,13 @@
 webpackJsonp([11],{
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddreviewPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -34,6 +34,8 @@ var AddreviewPage = /** @class */ (function () {
         this.reviewService = reviewService;
         this.events = events;
         this.address = navParams.get('address');
+        this.email = navParams.get('userEmail');
+        console.log(this.email);
     }
     AddreviewPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AddreviewPage');
@@ -43,7 +45,7 @@ var AddreviewPage = /** @class */ (function () {
     };
     AddreviewPage.prototype.addReview = function () {
         var _this = this;
-        this.reviewService.addReview({ Comentario: this.comment, Puntuacion: this.score, DireccionGasolinera: this.address })
+        this.reviewService.addReview({ Comentario: this.comment, Puntuacion: this.score, DireccionGasolinera: this.address, EmailUsuario: this.email })
             .then(function (data) {
             _this.addedReviewCorrectly(data);
         })
@@ -69,14 +71,14 @@ var AddreviewPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminpanelPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -123,7 +125,7 @@ var AdminpanelPage = /** @class */ (function () {
     };
     AdminpanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adminpanel',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\adminpanel\adminpanel.html"*/'<!--\n  Generated template for the AdminpanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      AdminPanel App v1.0\n    </ion-title>\n\n    <ion-buttons end *ngIf="(pendingReviews).length > 0">\n      <button ion-button icon-only (click)="validateAll()">\n        <ion-icon name="checkbox-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n    <ion-item padding text-center *ngIf="(pendingReviews).length === 0"><p>No tiene ningúna review pendiente por validar!</p></ion-item>\n    <ion-list *ngIf="(pendingReviews).length > 0">\n        <ion-list-header>Reviews</ion-list-header>\n        <ion-item *ngFor="let review of pendingReviews">\n          <ion-avatar item-start>\n            <img src="../../assets/imgs/logo.png">\n          </ion-avatar>\n          <div style="display: inline-flex">\n            <ion-icon name="star" *ngFor="let p of \' \'.repeat(review.Puntuacion).split(\'\')"></ion-icon>\n          </div>\n          <p>{{review.Comentario}}</p>\n          <ion-note item-end>3:43 pm</ion-note>\n        </ion-item>\n      </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\adminpanel\adminpanel.html"*/,
+            selector: 'page-adminpanel',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\adminpanel\adminpanel.html"*/'<!--\n  Generated template for the AdminpanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      AdminPanel App v1.0\n    </ion-title>\n\n    <ion-buttons end *ngIf="(pendingReviews).length > 0">\n      <button ion-button icon-only (click)="validateAll()">\n        <ion-icon name="checkbox-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-item padding text-center *ngIf="(pendingReviews).length === 0">\n    <p>No tiene ningúna review pendiente por validar!</p>\n  </ion-item>\n  <ion-list *ngIf="(pendingReviews).length > 0">\n    <ion-list-header>Reviews</ion-list-header>\n    <ion-item *ngFor="let review of pendingReviews">\n      <ion-avatar item-start>\n        <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <div style="display: inline-flex">\n        <ion-icon name="star" *ngFor="let p of \' \'.repeat(review.Puntuacion).split(\'\')"></ion-icon>\n      </div>\n      <p>{{review.Comentario}}</p>\n      <ion-note item-end>3:43 pm</ion-note>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\adminpanel\adminpanel.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__["a" /* ReviewServiceProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]])
@@ -135,14 +137,15 @@ var AdminpanelPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavouritesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_favourites_service_favourites_service__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_favourites_service_favourites_service__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -155,6 +158,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the FavouritesPage page.
  *
@@ -162,14 +166,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var FavouritesPage = /** @class */ (function () {
-    function FavouritesPage(navCtrl, navParams, favouritesServices) {
+    function FavouritesPage(navCtrl, navParams, favouritesServices, authenticationService, events) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.favouritesServices = favouritesServices;
+        this.authenticationService = authenticationService;
+        this.events = events;
+        this.favourites = [];
     }
     FavouritesPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
         this.favouritesServices.getFavourites().then(function (value) {
             console.log(value);
+            _this.favourites = value;
         });
     };
     FavouritesPage.prototype.ionViewDidLoad = function () {
@@ -177,15 +186,35 @@ var FavouritesPage = /** @class */ (function () {
     };
     FavouritesPage.prototype.deleteFavourite = function (fuelstation) {
         this.favouritesServices.deleteFromLocal(fuelstation);
+        this.favourites = this.favourites.filter(function (fuelstationAux) { return fuelstation.address != fuelstationAux.address; });
     };
     FavouritesPage.prototype.deleteAll = function () {
-        this.favouritesServices.deleteAll();
+        var _this = this;
+        this.favouritesServices.deleteAll().then(function () {
+            _this.favourites = [];
+        });
+    };
+    FavouritesPage.prototype.synchronize = function () {
+        var _this = this;
+        this.events.publish('app:showLoading', 'Se están sincronizando los datos , espere por favor...');
+        this.authenticationService.checkIfUserisLogged().then(function (user) {
+            if (user) {
+                var favouritesAux = _this.favourites.filter(function (fuelstation) {
+                    fuelstation.userEmail = user.email;
+                });
+                _this.favouritesServices.saveFavouriteToServer(favouritesAux).then(function (data) {
+                    _this.events.publish('app:hideLoading');
+                    _this.events.publish('app:toast', data.message);
+                });
+            }
+        });
     };
     FavouritesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favourites',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\favourites\favourites.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      Favoritos App v1.0\n    </ion-title>\n\n    <ion-buttons end *ngIf="(favouritesServices.favourites).length > 0">\n      <button ion-button icon-only (click)="deleteAll()">\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-item padding text-center *ngIf="(favouritesServices.favourites).length === 0"><p>No tiene ningúna gasolinera en favoritos!</p></ion-item>\n  <ion-card *ngFor="let fuelstation of favouritesServices.favourites">\n    <ion-item>\n      <ion-icon name="pin" item-start large color="danger"></ion-icon>\n      <h2>{{fuelstation.name}}</h2>\n      <p>{{fuelstation.schedule}}</p>\n    </ion-item>\n\n    <ion-item>\n      <span item-left>{{fuelstation.distance}}</span>\n      <span item-left>{{fuelstation.price}}€/L</span>\n      <button ion-button icon-left outline item-end color="details" (click)="deleteFavourite(fuelstation)">\n        <ion-icon name="trash"></ion-icon>\n        Eliminar\n      </button>\n      <button ion-button icon-left outline item-end (click)="openGoogleMaps(fuelstation.position,fuelstation.name)">\n        <ion-icon name="navigate"></ion-icon>\n        Llévame\n      </button>\n    </ion-item>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\favourites\favourites.html"*/,
+            selector: 'page-favourites',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\favourites\favourites.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      Favoritos App v1.0\n    </ion-title>\n\n    <ion-buttons end *ngIf="(favourites).length > 0">\n      <button ion-button icon-left outline item-end (click)="synchronize()">\n        <ion-icon name="sync"></ion-icon>\n        Sincronizar\n      </button>\n      <button ion-button icon-only (click)="deleteAll()">\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-item padding text-center *ngIf="(favourites).length === 0">\n    <p>No tiene ningúna gasolinera en favoritos!</p>\n  </ion-item>\n  <ion-card *ngFor="let fuelstation of favourites">\n    <ion-item>\n      <ion-icon name="pin" item-start large color="danger"></ion-icon>\n      <h2>{{fuelstation.name}}</h2>\n      <p>{{fuelstation.schedule}}</p>\n      <p item-end>{{fuelstation.type}}</p>\n    </ion-item>\n\n    <ion-item>\n      <span item-left>{{fuelstation.distance}}</span>\n      <span item-left>{{fuelstation.price}}€/L</span>\n      <button ion-button icon-left outline item-end color="details" (click)="deleteFavourite(fuelstation)">\n        <ion-icon name="trash"></ion-icon>\n        Eliminar\n      </button>\n      <button ion-button icon-left outline item-end (click)="openGoogleMaps(fuelstation.position,fuelstation.name)">\n        <ion-icon name="navigate"></ion-icon>\n        Llévame\n      </button>\n    </ion-item>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\favourites\favourites.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_favourites_service_favourites_service__["a" /* FavouritesServiceProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_favourites_service_favourites_service__["a" /* FavouritesServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]])
     ], FavouritesPage);
     return FavouritesPage;
 }());
@@ -194,16 +223,16 @@ var FavouritesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuelstationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_launch_navigator__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fuelstationdetails_fuelstationdetails__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_launch_navigator__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fuelstationdetails_fuelstationdetails__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -278,7 +307,7 @@ var FuelstationsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -286,8 +315,8 @@ var FuelstationsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_authentication_service_authentication_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_authentication_service_authentication_service__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -366,7 +395,7 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -374,7 +403,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -445,20 +474,20 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_popover__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_popover__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_map_service_map_service__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_preferences_service_preferences_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fuelstations_fuelstations__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fuelstationdetails_fuelstationdetails__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_preferences_service_preferences_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fuelstations_fuelstations__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fuelstationdetails_fuelstationdetails__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -644,7 +673,7 @@ var MapPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -693,14 +722,14 @@ var PopoverPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreferencesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_preferences_service_preferences_service__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -748,13 +777,16 @@ var PreferencesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_favourites_service_favourites_service__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -766,6 +798,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -773,18 +808,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ProfilePage = /** @class */ (function () {
-    function ProfilePage(navCtrl, navParams) {
+    function ProfilePage(navCtrl, navParams, reviewService, authService, favouritesService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.reviewService = reviewService;
+        this.authService = authService;
+        this.favouritesService = favouritesService;
+        this.option = "reviews";
+        this.reviews = [];
+        this.favourites = [];
     }
+    ProfilePage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        this.authService.checkIfUserisLogged().then(function (data) {
+            if (data) {
+                _this.reviewService.getReviewsByUser(data.email).then(function (result) {
+                    _this.reviews = result;
+                });
+                _this.favouritesService.getFavourites().then(function (data) {
+                    _this.favourites = data;
+                });
+            }
+        });
+    };
     ProfilePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ProfilePage');
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-navbar color="danger">\n      <button ion-button icon-only menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <ion-title>\n        Preferencias App v1.0\n      </ion-title>\n  \n      <ion-buttons end>\n        <!--<button ion-button icon-only (click)="openModal()">-->\n          <!--<ion-icon name="refresh"></ion-icon>-->\n        <!--</button>-->\n      </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\profile\profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header no-border>\n  <ion-navbar color="danger">\n    <button ion-button icon-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n\n\n    <ion-buttons end>\n      <!--<button ion-button icon-only (click)="openModal()">-->\n      <!--<ion-icon name="refresh"></ion-icon>-->\n      <!--</button>-->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-row class="profile-header" justify-content-center>\n    <ion-col>\n      <ion-avatar>\n        <img src="assets/imgs/logo.png">\n      </ion-avatar>\n      <h3>Usuario</h3>\n      <p>@email</p>\n    </ion-col>\n  </ion-row>\n  <ion-segment [(ngModel)]="option" color="danger">\n    <ion-segment-button value="reviews">\n      Reviews\n    </ion-segment-button>\n    <ion-segment-button value="favourites">\n      Favoritos\n    </ion-segment-button>\n    <ion-segment-button value="lastvisited">\n      Últimos Vistos\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="option">\n    <ion-list *ngSwitchCase="\'reviews\'">\n      <ion-item padding text-center *ngIf="(reviews).length === 0">\n        <p>No tiene ningúna review publicada!</p>\n      </ion-item>\n      <ion-list *ngIf="(reviews).length > 0">\n        <ion-item *ngFor="let review of reviews">\n          <ion-avatar item-start>\n            <img src="../../assets/imgs/logo.png">\n          </ion-avatar>\n          <div style="display: inline-flex">\n            <ion-icon name="star" *ngFor="let p of \' \'.repeat(review.Puntuacion).split(\'\')"></ion-icon>\n          </div>\n          <p>{{review.Comentario}}</p>\n          <ion-note item-end>3:43 pm</ion-note>\n        </ion-item>\n      </ion-list>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'favourites\'">\n      <ion-item padding text-center *ngIf="(favourites).length === 0">\n        <p>No tiene ningúna gasolinera en favoritos!</p>\n      </ion-item>\n      <ion-card *ngFor="let fuelstation of favourites">\n        <ion-item>\n          <ion-icon name="pin" item-start large color="danger"></ion-icon>\n          <h2>{{fuelstation.name}}</h2>\n          <p>{{fuelstation.schedule}}</p>\n        </ion-item>\n\n        <ion-item>\n          <span item-left>{{fuelstation.distance}}</span>\n          <span item-left>{{fuelstation.price}}€/L</span>\n          <button ion-button icon-left outline item-end color="details" (click)="deleteFavourite(fuelstation)">\n            <ion-icon name="trash"></ion-icon>\n            Eliminar\n          </button>\n          <button ion-button icon-left outline item-end (click)="openGoogleMaps(fuelstation.position,fuelstation.name)">\n            <ion-icon name="navigate"></ion-icon>\n            Llévame\n          </button>\n        </ion-item>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'lastvisited\'">\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="assets/img/thumbnail-duckling-1.jpg">\n        </ion-thumbnail>\n        <h2>Daffy</h2>\n      </ion-item>\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="assets/img/thumbnail-duckling-2.jpg">\n        </ion-thumbnail>\n        <h2>Huey</h2>\n      </ion-item>\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="assets/img/thumbnail-duckling-3.jpg">\n        </ion-thumbnail>\n        <h2>Dewey</h2>\n      </ion-item>\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="assets/img/thumbnail-duckling-4.jpg">\n        </ion-thumbnail>\n        <h2>Louie</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\pages\profile\profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_review_service_review_service__["a" /* ReviewServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_favourites_service_favourites_service__["a" /* FavouritesServiceProvider */]])
     ], ProfilePage);
     return ProfilePage;
 }());
@@ -793,7 +848,7 @@ var ProfilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -806,11 +861,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 132;
+webpackEmptyAsyncContext.id = 133;
 
 /***/ }),
 
-/***/ 173:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -827,11 +882,11 @@ var map = {
 		8
 	],
 	"../pages/fuelstationdetails/fuelstationdetails.module": [
-		306,
+		305,
 		7
 	],
 	"../pages/fuelstations/fuelstations.module": [
-		305,
+		306,
 		6
 	],
 	"../pages/login/login.module": [
@@ -870,32 +925,8 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 173;
+webpackAsyncContext.id = 174;
 module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 174:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return URIS; });
-var URIS = /** @class */ (function () {
-    function URIS(host) {
-        this.host = host;
-        this.LOGIN = host + "/users/login";
-        //this.FACEBOOK_LOGIN = host+"/users/facebook/login";
-        this.REGISTER = host + "/users/register";
-        this.API_FUELSTATION = host + "/api/fuelstation";
-        this.ADD_REVIEW = host + "/api/reviews/add";
-        this.GET_REVIEWS = host + "/api/reviews/";
-        this.GET_PENDING_REVIEWS = host + "/api/reviews/pending";
-        this.VALIDATE_ALL_REVIEWS = host + "/api/reviews/validate";
-    }
-    return URIS;
-}());
-
-//# sourceMappingURL=uris-model.js.map
 
 /***/ }),
 
@@ -904,9 +935,9 @@ var URIS = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -935,7 +966,7 @@ var MapServiceProvider = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve) {
             value = encodeURI(value);
-            _this.http.get('https://192.168.0.103:3000/api/fuelstation/' + value + '')
+            _this.http.get('https://192.168.1.99:3000/api/fuelstation/' + value + '')
                 .subscribe(function (data) {
                 resolve(data);
             }, function (err) {
@@ -973,31 +1004,31 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_map_map__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_favourites_favourites__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_register_register__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_preferences_preferences__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_map_map__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_favourites_favourites__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_register_register__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_preferences_preferences__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_map_service_map_service__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_preferences_service_preferences_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_adminpanel_adminpanel__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_authentication_service_authentication_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_facebook__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fuelstations_fuelstations__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_fuelstationdetails_fuelstationdetails__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addreview_addreview__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_review_service_review_service__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_favourites_service_favourites_service__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profile_profile__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_preferences_service_preferences_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_adminpanel_adminpanel__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_authentication_service_authentication_service__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_facebook__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fuelstations_fuelstations__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_fuelstationdetails_fuelstationdetails__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addreview_addreview__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_review_service_review_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_favourites_service_favourites_service__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profile_profile__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1057,8 +1088,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/addreview/addreview.module#AddreviewPageModule', name: 'AddreviewPage', segment: 'addreview', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/adminpanel/adminpanel.module#AdminpanelPageModule', name: 'AdminpanelPage', segment: 'adminpanel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favourites/favourites.module#FavouritesPageModule', name: 'FavouritesPage', segment: 'favourites', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fuelstations/fuelstations.module#FuelstationsPageModule', name: 'FuelstationsPage', segment: 'fuelstations', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fuelstationdetails/fuelstationdetails.module#FuelstationdetailsPageModule', name: 'FuelstationdetailsPage', segment: 'fuelstationdetails', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fuelstations/fuelstations.module#FuelstationsPageModule', name: 'FuelstationsPage', segment: 'fuelstations', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/popover/popover.module#PopoverPageModule', name: 'PopoverPage', segment: 'popover', priority: 'low', defaultHistory: [] },
@@ -1104,7 +1135,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1123,7 +1154,7 @@ var FuelPreferencesModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 281:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1136,253 +1167,19 @@ var FuelPreferences = [
 
 /***/ }),
 
-/***/ 301:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_map_map__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favourites_favourites__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_preferences_service_preferences_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_adminpanel_adminpanel__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_authentication_service_authentication_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__ = __webpack_require__(120);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, preferenceService, events, toastCtrl, authService, loadingCtrl) {
-        this.platform = platform;
-        this.statusBar = statusBar;
-        this.splashScreen = splashScreen;
-        this.preferenceService = preferenceService;
-        this.events = events;
-        this.toastCtrl = toastCtrl;
-        this.authService = authService;
-        this.loadingCtrl = loadingCtrl;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */];
-        this.initializeApp();
-        this.initializeEvents();
-        this.pages = [
-            { title: 'Mapa', component: __WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */], icon: 'map' },
-            { title: 'Favoritos', component: __WEBPACK_IMPORTED_MODULE_5__pages_favourites_favourites__["a" /* FavouritesPage */], icon: 'star' },
-            { title: 'Preferencias', component: __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__["a" /* PreferencesPage */], icon: 'settings' },
-        ];
-        this.login = { title: 'Iniciar Sesión', component: __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */], icon: 'person' };
-        this.logout = { title: 'Cerrar Sesión', icon: 'log-out' };
-        this.adminpanel = { title: 'Admin Panel', component: __WEBPACK_IMPORTED_MODULE_9__pages_adminpanel_adminpanel__["a" /* AdminpanelPage */], icon: 'open' },
-            this.profile = { title: 'Profile', component: __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__["a" /* ProfilePage */], icon: 'person' };
-    }
-    MyApp.prototype.initializeApp = function () {
-        var _this = this;
-        this.platform.ready().then(function () {
-            _this.preferenceService.defaultPreferences();
-            _this.checkIfUserIsLogged();
-            _this.statusBar.styleDefault();
-            _this.splashScreen.hide();
-        });
-    };
-    MyApp.prototype.initializeEvents = function () {
-        var _this = this;
-        this.events.subscribe('app:toast', function (message) {
-            _this.showToast(message);
-        });
-        this.events.subscribe('app:login', function (user) {
-            _this.handleLogin(user);
-        });
-        this.events.subscribe('app:loginFacebook', function (user) {
-            _this.handleLogin(user);
-        });
-        this.events.subscribe('app:showLoading', function (message) {
-            _this.showLoading(message);
-        });
-        this.events.subscribe('app:hideLoading', function () {
-            _this.hideLoading();
-        });
-    };
-    MyApp.prototype.showToast = function (message) {
-        var toast = this.toastCtrl.create({
-            message: message,
-            duration: 3000,
-            position: 'top'
-        });
-        toast.present();
-    };
-    MyApp.prototype.handleLogin = function (user) {
-        this.user = user;
-        this.authService.saveUserLocally(user);
-        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */]);
-    };
-    MyApp.prototype.showLoading = function (message) {
-        this.loading = this.loadingCtrl.create({
-            content: message
-        });
-        this.loading.present();
-    };
-    MyApp.prototype.hideLoading = function () {
-        this.loading.dismiss();
-    };
-    MyApp.prototype.logoutUser = function () {
-        this.user = null;
-        this.authService.removeUserLocally();
-        this.authService.checkFacebook();
-    };
-    MyApp.prototype.checkIfUserIsLogged = function () {
-        var _this = this;
-        this.authService.checkIfUserisLogged().then(function (value) {
-            if (value) {
-                _this.user = value;
-            }
-        });
-    };
-    MyApp.prototype.openPage = function (page) {
-        this.nav.setRoot(page.component);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
-    ], MyApp.prototype, "nav", void 0);
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="danger">\n      <ion-title *ngIf="!user">Gasolineras Baratas</ion-title>\n      <ion-item *ngIf="user" color="danger">\n          <ion-avatar item-start>\n            <img src="assets/imgs/logo.png">\n          </ion-avatar>\n          <h2>{{user.name}}</h2>\n          <p>{{user.email}}</p>\n        </ion-item>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button class="lista-menu" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon"></ion-icon> {{p.title}}\n      </button>\n      <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">\n        <ion-icon [name]="login.icon"></ion-icon> {{login.title}}\n      </button>\n      <button *ngIf="user && user.isAdmin" class="lista-menu" menuClose ion-item (click)="openPage(adminpanel)">\n        <ion-icon [name]="adminpanel.icon"></ion-icon> {{adminpanel.title}}\n      </button>\n      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="openPage(profile)">\n        <ion-icon [name]="profile.icon"></ion-icon> {{profile.title}}\n      </button>\n      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logoutUser()">\n        <ion-icon [name]="logout.icon"></ion-icon> {{logout.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\app\app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_8__providers_preferences_service_preferences_service__["a" /* PreferencesServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_10__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
-    ], MyApp);
-    return MyApp;
-}());
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 43:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreferencesServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mock_preferences__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(51);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/*
-  Generated class for the PreferencesServiceProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var PreferencesServiceProvider = /** @class */ (function () {
-    function PreferencesServiceProvider(http, storage) {
-        this.http = http;
-        this.storage = storage;
-        this.fuelPreferences = __WEBPACK_IMPORTED_MODULE_3__models_mock_preferences__["a" /* FuelPreferences */];
-        console.log('Hello PreferencesServiceProvider Provider');
-    }
-    PreferencesServiceProvider.prototype.defaultPreferences = function () {
-        var _this = this;
-        this.storage.get('fuelpreference').then(function (value) {
-            if (!value) {
-                _this.storage.set('fuelpreference', new __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__["a" /* FuelPreferencesModel */](2, "Gasoleo B", "Precio Gasoleo A", true));
-            }
-        });
-    };
-    PreferencesServiceProvider.prototype.getPreferences = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.storage.get('fuelpreference').then(function (value) {
-                console.log(value);
-                resolve(value);
-            });
-        });
-    };
-    PreferencesServiceProvider.prototype.checkPreferences = function () {
-        var _this = this;
-        this.storage.get('fuelpreference').then(function (value) {
-            if (value) {
-                _this.fuelPreferences.forEach(function (fuelstation) {
-                    if (fuelstation.id == value.id)
-                        fuelstation.selected = true;
-                    else
-                        fuelstation.selected = false;
-                });
-            }
-            else {
-                console.log("No hay en local");
-            }
-        });
-    };
-    PreferencesServiceProvider.prototype.savePreferences = function (type) {
-        var _this = this;
-        this.fuelPreferences.forEach(function (fuelstation) {
-            if (fuelstation.id == type) {
-                _this.storage.set('fuelpreference', fuelstation);
-            }
-        });
-    };
-    PreferencesServiceProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
-    ], PreferencesServiceProvider);
-    return PreferencesServiceProvider;
-}());
-
-//# sourceMappingURL=preferences-service.js.map
-
-/***/ }),
-
-/***/ 44:
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthenticationServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_uris_model__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_uris_model__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(175);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1412,7 +1209,7 @@ var AuthenticationServiceProvider = /** @class */ (function () {
         this.storage = storage;
         this.facebook = facebook;
         console.log('Hello AuthenticationServiceProvider Provider');
-        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://192.168.0.103:3000');
+        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('https://192.168.1.99:3000');
     }
     AuthenticationServiceProvider.prototype.register = function (data) {
         var _this = this;
@@ -1508,14 +1305,159 @@ var AuthenticationServiceProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 50:
+/***/ 301:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_map_map__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favourites_favourites__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_preferences_service_preferences_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_adminpanel_adminpanel__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_authentication_service_authentication_service__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__ = __webpack_require__(121);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen, preferenceService, events, toastCtrl, authService, loadingCtrl) {
+        this.platform = platform;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.preferenceService = preferenceService;
+        this.events = events;
+        this.toastCtrl = toastCtrl;
+        this.authService = authService;
+        this.loadingCtrl = loadingCtrl;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */];
+        this.initializeApp();
+        this.initializeEvents();
+        this.pages = [
+            { title: 'Mapa', component: __WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */], icon: 'map' },
+            { title: 'Favoritos', component: __WEBPACK_IMPORTED_MODULE_5__pages_favourites_favourites__["a" /* FavouritesPage */], icon: 'star' },
+            { title: 'Preferencias', component: __WEBPACK_IMPORTED_MODULE_7__pages_preferences_preferences__["a" /* PreferencesPage */], icon: 'settings' },
+        ];
+        this.login = { title: 'Iniciar Sesión', component: __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */], icon: 'person' };
+        this.logout = { title: 'Cerrar Sesión', icon: 'log-out' };
+        this.adminpanel = { title: 'Admin Panel', component: __WEBPACK_IMPORTED_MODULE_9__pages_adminpanel_adminpanel__["a" /* AdminpanelPage */], icon: 'open' };
+        this.profile = { title: 'Profile', component: __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__["a" /* ProfilePage */], icon: 'person' };
+    }
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        this.platform.ready().then(function () {
+            _this.preferenceService.defaultPreferences();
+            _this.checkIfUserIsLogged();
+            _this.statusBar.styleDefault();
+            _this.splashScreen.hide();
+        });
+    };
+    MyApp.prototype.initializeEvents = function () {
+        var _this = this;
+        this.events.subscribe('app:toast', function (message) {
+            _this.showToast(message);
+        });
+        this.events.subscribe('app:login', function (user) {
+            _this.handleLogin(user);
+        });
+        this.events.subscribe('app:loginFacebook', function (user) {
+            _this.handleLogin(user);
+        });
+        this.events.subscribe('app:showLoading', function (message) {
+            _this.showLoading(message);
+        });
+        this.events.subscribe('app:hideLoading', function () {
+            _this.hideLoading();
+        });
+    };
+    MyApp.prototype.showToast = function (message) {
+        var toast = this.toastCtrl.create({
+            message: message,
+            duration: 3000,
+            position: 'top'
+        });
+        toast.present();
+    };
+    MyApp.prototype.handleLogin = function (user) {
+        this.user = user;
+        this.authService.saveUserLocally(user);
+        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_4__pages_map_map__["a" /* MapPage */]);
+    };
+    MyApp.prototype.showLoading = function (message) {
+        this.loading = this.loadingCtrl.create({
+            content: message
+        });
+        this.loading.present();
+    };
+    MyApp.prototype.hideLoading = function () {
+        this.loading.dismiss();
+    };
+    MyApp.prototype.logoutUser = function () {
+        this.user = null;
+        this.authService.removeUserLocally();
+        this.authService.checkFacebook();
+    };
+    MyApp.prototype.checkIfUserIsLogged = function () {
+        var _this = this;
+        this.authService.checkIfUserisLogged().then(function (value) {
+            if (value) {
+                _this.user = value;
+            }
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        this.nav.setRoot(page.component);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
+    ], MyApp.prototype, "nav", void 0);
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="danger">\n      <ion-title *ngIf="!user">Gasolineras Baratas</ion-title>\n      <ion-item *ngIf="user" color="danger">\n          <ion-avatar item-start>\n            <img src="assets/imgs/logo.png">\n          </ion-avatar>\n          <h2>{{user.name}}</h2>\n          <p>{{user.email}}</p>\n        </ion-item>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button class="lista-menu" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon"></ion-icon> {{p.title}}\n      </button>\n      <button *ngIf="!user" class="lista-menu" menuClose ion-item (click)="openPage(login)">\n        <ion-icon [name]="login.icon"></ion-icon> {{login.title}}\n      </button>\n      <button *ngIf="user && user.isAdmin" class="lista-menu" menuClose ion-item (click)="openPage(adminpanel)">\n        <ion-icon [name]="adminpanel.icon"></ion-icon> {{adminpanel.title}}\n      </button>\n      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="openPage(profile)">\n        <ion-icon [name]="profile.icon"></ion-icon> {{profile.title}}\n      </button>\n      <button *ngIf="user" class="lista-menu" menuClose ion-item (click)="logoutUser()">\n        <ion-icon [name]="logout.icon"></ion-icon> {{logout.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"C:\Users\Usuario\Documents\Bootcamp\Curso-Ionic3\AppGasolineras\src\app\app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_8__providers_preferences_service_preferences_service__["a" /* PreferencesServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_10__providers_authentication_service_authentication_service__["a" /* AuthenticationServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_uris_model__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_uris_model__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1541,10 +1483,11 @@ var ReviewServiceProvider = /** @class */ (function () {
         this.http = http;
         this.events = events;
         console.log('Hello ReviewServiceProvider Provider');
-        this.URIS = new __WEBPACK_IMPORTED_MODULE_2__models_uris_model__["a" /* URIS */]('https://192.168.0.103:3000');
+        this.URIS = new __WEBPACK_IMPORTED_MODULE_2__models_uris_model__["a" /* URIS */]('https://192.168.1.99:3000');
     }
     ReviewServiceProvider.prototype.addReview = function (data) {
         var _this = this;
+        console.log(data);
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]();
         headers.append('Content-Type', 'application-json');
         return new Promise(function (resolve) {
@@ -1554,15 +1497,27 @@ var ReviewServiceProvider = /** @class */ (function () {
             });
         });
     };
-    ReviewServiceProvider.prototype.getReviews = function (value) {
+    ReviewServiceProvider.prototype.getReviewsByFuelStation = function (value) {
         var _this = this;
         return new Promise(function (resolve) {
             value = encodeURIComponent(value);
-            _this.http.get(_this.URIS.GET_REVIEWS + value + '')
+            _this.http.get(_this.URIS.GET_REVIEWS_BY_FUELSTATION + value + '')
                 .subscribe(function (data) {
                 resolve(data);
             }, function (err) {
                 console.log(err);
+            });
+        });
+    };
+    ReviewServiceProvider.prototype.getReviewsByUser = function (value) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            value = encodeURIComponent(value);
+            _this.http.get(_this.URIS.GET_REVIEWS_BY_USER + value)
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.log(error);
             });
         });
     };
@@ -1602,20 +1557,221 @@ var ReviewServiceProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 56:
+/***/ 45:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreferencesServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mock_preferences__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(52);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the PreferencesServiceProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var PreferencesServiceProvider = /** @class */ (function () {
+    function PreferencesServiceProvider(http, storage) {
+        this.http = http;
+        this.storage = storage;
+        this.fuelPreferences = __WEBPACK_IMPORTED_MODULE_3__models_mock_preferences__["a" /* FuelPreferences */];
+        console.log('Hello PreferencesServiceProvider Provider');
+    }
+    PreferencesServiceProvider.prototype.defaultPreferences = function () {
+        var _this = this;
+        this.storage.get('fuelpreference').then(function (value) {
+            if (!value) {
+                _this.storage.set('fuelpreference', new __WEBPACK_IMPORTED_MODULE_2__models_preferences_model__["a" /* FuelPreferencesModel */](2, "Gasoleo B", "Precio Gasoleo A", true));
+            }
+        });
+    };
+    PreferencesServiceProvider.prototype.getPreferences = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.storage.get('fuelpreference').then(function (value) {
+                console.log(value);
+                resolve(value);
+            });
+        });
+    };
+    PreferencesServiceProvider.prototype.checkPreferences = function () {
+        var _this = this;
+        this.storage.get('fuelpreference').then(function (value) {
+            if (value) {
+                _this.fuelPreferences.forEach(function (fuelstation) {
+                    if (fuelstation.id == value.id)
+                        fuelstation.selected = true;
+                    else
+                        fuelstation.selected = false;
+                });
+            }
+            else {
+                console.log("No hay en local");
+            }
+        });
+    };
+    PreferencesServiceProvider.prototype.savePreferences = function (type) {
+        var _this = this;
+        this.fuelPreferences.forEach(function (fuelstation) {
+            if (fuelstation.id == type) {
+                _this.storage.set('fuelpreference', fuelstation);
+            }
+        });
+    };
+    PreferencesServiceProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+    ], PreferencesServiceProvider);
+    return PreferencesServiceProvider;
+}());
+
+//# sourceMappingURL=preferences-service.js.map
+
+/***/ }),
+
+/***/ 51:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavouritesServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_uris_model__ = __webpack_require__(88);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the FavouritesServiceProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var FavouritesServiceProvider = /** @class */ (function () {
+    function FavouritesServiceProvider(http, storage, events) {
+        this.http = http;
+        this.storage = storage;
+        this.events = events;
+        this.favourites = [];
+        console.log('Hello FavouritesServiceProvider Provider');
+        this.URIS = new __WEBPACK_IMPORTED_MODULE_4__models_uris_model__["a" /* URIS */]('http://192.168.0.103:3000');
+    }
+    FavouritesServiceProvider.prototype.checkIfAlreadyInFavourites = function (marker) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.storage.get('favourites-fuelstations').then(function (value) {
+                var exists = false;
+                if (value) {
+                    value.forEach(function (fuelstation) {
+                        if (fuelstation.address === marker.address)
+                            exists = true;
+                    });
+                }
+                resolve(exists);
+            });
+        });
+    };
+    FavouritesServiceProvider.prototype.saveFavouriteLocally = function (marker) {
+        var _this = this;
+        this.storage.get('favourites-fuelstations').then(function (value) {
+            (value) ? _this.favourites = value : _this.favourites = [];
+            _this.favourites.push(marker);
+            _this.storage.set('favourites-fuelstations', _this.favourites).then(function () {
+                _this.events.publish('app:toast', 'Se ha añadido la gasolinera a favoritos correctamente!');
+            });
+        });
+    };
+    ;
+    FavouritesServiceProvider.prototype.saveFavouriteToServer = function (favouritesAux) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.post(_this.URIS.SAVE_FAVOURITE_TO_SERVER, favouritesAux).subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                _this.events.publish('app:toast', error.error.message);
+            });
+        });
+    };
+    FavouritesServiceProvider.prototype.deleteFromLocal = function (marker) {
+        var _this = this;
+        this.storage.get('favourites-fuelstations').then(function (value) {
+            _this.favourites = value.filter(function (fuelstation) { return fuelstation.address != marker.address; });
+            _this.storage.set('favourites-fuelstations', _this.favourites).then(function () {
+                _this.events.publish('app:toast', 'Se ha eliminado la gasolinera de los favoritos!');
+            });
+        });
+    };
+    FavouritesServiceProvider.prototype.getFavourites = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.storage.get('favourites-fuelstations').then(function (value) {
+                resolve(value);
+            });
+        });
+    };
+    FavouritesServiceProvider.prototype.deleteAll = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.storage.remove('favourites-fuelstations').then(function () {
+                _this.events.publish('app:toast', 'Se han eliminado todos los favoritos!');
+                resolve();
+            });
+        });
+    };
+    FavouritesServiceProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* Events */]])
+    ], FavouritesServiceProvider);
+    return FavouritesServiceProvider;
+}());
+
+//# sourceMappingURL=favourites-service.js.map
+
+/***/ }),
+
+/***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuelstationdetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_preferences_service_preferences_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_addreview_addreview__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_review_service_review_service__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_authentication_service_authentication_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_launch_navigator__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_favourites_service_favourites_service__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_preferences_service_preferences_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_addreview_addreview__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_review_service_review_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_authentication_service_authentication_service__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_launch_navigator__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_favourites_service_favourites_service__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1666,7 +1822,7 @@ var FuelstationdetailsPage = /** @class */ (function () {
             _this.preference = value;
             console.log(_this.preference);
         });
-        this.reviewService.getReviews(this.marker.address).then(function (data) {
+        this.reviewService.getReviewsByFuelStation(this.marker.address).then(function (data) {
             (data.length === 0) ? _this.anyReviews = false : _this.reviews = data;
         });
     };
@@ -1697,11 +1853,11 @@ var FuelstationdetailsPage = /** @class */ (function () {
     FuelstationdetailsPage.prototype.openAddReviewModal = function () {
         var _this = this;
         this.authService.checkIfUserisLogged().then(function (value) {
-            (value) ? _this.createModal() : _this.showErrorToast();
+            (value) ? _this.createModal(value) : _this.showErrorToast();
         });
     };
-    FuelstationdetailsPage.prototype.createModal = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__pages_addreview_addreview__["a" /* AddreviewPage */], { address: this.marker.address });
+    FuelstationdetailsPage.prototype.createModal = function (value) {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__pages_addreview_addreview__["a" /* AddreviewPage */], { address: this.marker.address, userEmail: value.email });
         modal.present();
     };
     FuelstationdetailsPage.prototype.showErrorToast = function () {
@@ -1721,6 +1877,7 @@ var FuelstationdetailsPage = /** @class */ (function () {
     };
     FuelstationdetailsPage.prototype.saveToFavourites = function () {
         var _this = this;
+        this.marker.type = this.preference.title;
         this.favouritesServices.checkIfAlreadyInFavourites(this.marker).then(function (value) {
             (value) ? _this.deleteFromFavourites() : _this.favouritesServices.saveFavouriteLocally(_this.marker);
         });
@@ -1766,103 +1923,29 @@ var FuelstationdetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 87:
+/***/ 88:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavouritesServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the FavouritesServiceProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var FavouritesServiceProvider = /** @class */ (function () {
-    function FavouritesServiceProvider(http, storage, events) {
-        this.http = http;
-        this.storage = storage;
-        this.events = events;
-        this.favourites = [];
-        console.log('Hello FavouritesServiceProvider Provider');
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return URIS; });
+var URIS = /** @class */ (function () {
+    function URIS(host) {
+        this.host = host;
+        this.LOGIN = host + "/users/login";
+        //this.FACEBOOK_LOGIN = host+"/users/facebook/login";
+        this.REGISTER = host + "/users/register";
+        this.API_FUELSTATION = host + "/api/fuelstation";
+        this.ADD_REVIEW = host + "/api/reviews/add";
+        this.GET_REVIEWS_BY_FUELSTATION = host + "/api/reviews/fuelstation/";
+        this.GET_REVIEWS_BY_USER = host + "/api/reviews/user/";
+        this.GET_PENDING_REVIEWS = host + "/api/reviews/pending";
+        this.VALIDATE_ALL_REVIEWS = host + "/api/reviews/validate";
+        this.SAVE_FAVOURITE_TO_SERVER = host + "/api/favourites/save";
     }
-    FavouritesServiceProvider.prototype.checkIfAlreadyInFavourites = function (marker) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.storage.get('favourites-fuelstations').then(function (value) {
-                var exists = false;
-                if (value) {
-                    value.forEach(function (fuelstation) {
-                        if (fuelstation.address === marker.address)
-                            exists = true;
-                    });
-                }
-                resolve(exists);
-            });
-        });
-    };
-    FavouritesServiceProvider.prototype.saveFavouriteLocally = function (marker) {
-        var _this = this;
-        this.storage.get('favourites-fuelstations').then(function (value) {
-            (value) ? _this.favourites = value : _this.favourites = [];
-            _this.favourites.push(marker);
-            _this.storage.set('favourites-fuelstations', _this.favourites).then(function () {
-                _this.events.publish('app:toast', 'Se ha añadido la gasolinera a favoritos correctamente!');
-            });
-        });
-    };
-    FavouritesServiceProvider.prototype.deleteFromLocal = function (marker) {
-        var _this = this;
-        this.storage.get('favourites-fuelstations').then(function (value) {
-            _this.favourites = value.filter(function (fuelstation) { return fuelstation.address != marker.address; });
-            _this.storage.set('favourites-fuelstations', _this.favourites).then(function () {
-                _this.events.publish('app:toast', 'Se ha eliminado la gasolinera de los favoritos!');
-            });
-        });
-    };
-    FavouritesServiceProvider.prototype.getFavourites = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.storage.get('favourites-fuelstations').then(function (value) {
-                _this.favourites = value;
-                resolve(value);
-            });
-        });
-    };
-    FavouritesServiceProvider.prototype.deleteAll = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.storage.remove('favourites-fuelstations').then(function () {
-                _this.events.publish('app:toast', 'Se han eliminado todos los favoritos!');
-                _this.favourites = [];
-                resolve();
-            });
-        });
-    };
-    FavouritesServiceProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* Events */]])
-    ], FavouritesServiceProvider);
-    return FavouritesServiceProvider;
+    return URIS;
 }());
 
-//# sourceMappingURL=favourites-service.js.map
+//# sourceMappingURL=uris-model.js.map
 
 /***/ })
 
